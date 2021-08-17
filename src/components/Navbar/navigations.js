@@ -1,18 +1,22 @@
 export default  [
     {
-        name: "TECH",
+        name: "HOME",
         href: "#"
     },
     {
-        name: "TECH",
+        name: "LEARN",
         href: "#"
     },
     {
-        name: "TECH",
+        name: "RESOURCES",
         href: "#"
     },
     {
-        name: "TECH",
+        name: "NEWS",
+        href: "#"
+    },
+    {
+        name: "COMMUNITY",
         href: "#"
     },
 ]

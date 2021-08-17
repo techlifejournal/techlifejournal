@@ -5,8 +5,10 @@ module.exports = {
     extend: {
       colors: {
         techlife: "#141414"
+      },
+      borderWidth: {
+        '1': '0.5px'
       }
-
     },
   },
   variants: {
