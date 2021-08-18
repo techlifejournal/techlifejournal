@@ -7,7 +7,7 @@ import Sidebar from '../Sidebar';
 function Nav() {
     const [search, setSearch] = useState(false);
     return (
-
+        <section id = "navbar" className = "w-full fixed" >
         <div className="px-3  h-16 items-center navfont bg-techlife w-full flex justify-between ">
             {/* Left part of Navbar   */}
             <div id="left" className="text-white items-center   flex gap-2 cursor-pointer">      
@@ -39,6 +39,7 @@ function Nav() {
 
             </div>
         </div>
+        </section>
     )
 }
 
