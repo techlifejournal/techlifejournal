@@ -8,9 +8,9 @@ function Nav() {
     const [search, setSearch] = useState(false);
     return (
         <section id = "navbar" className = "w-full fixed" >
-        <div className="px-3  h-16 items-center navfont bg-techlife w-full flex justify-between ">
+        <div className="px-3  h-16 items-center navfont bg-techlife w-full flex  ">
             {/* Left part of Navbar   */}
-            <div id="left" className="text-white items-center   flex gap-2 cursor-pointer">      
+            <div id="left" className="flex-1 text-white items-center   flex gap-2 cursor-pointer">      
                     <Sidebar />
 
                 <div className="titlefont hidden md:block font-semibold">
@@ -20,7 +20,7 @@ function Nav() {
             </div>
 
             {/* Navigations   */}
-            <div id="center" className="hidden md:flex font-medium text-xs    text-white justify-center">
+            <div id="center" className="hidden  md:flex font-medium text-xs    text-white justify-center">
                 {navs.map((ele, index) => {
                     return <div className={`   ${index ? "border-l-1 border-opacity-50" : ""} px-5  hover:opacity-70 cursor-pointer `}>
                         <span>{ele.name}</span>
@@ -29,7 +29,7 @@ function Nav() {
             </div>
 
             {/*  Search Icon and UserIcon */}
-            <div id="right" className="text-white flex items-center gap-1 md:gap-6 justify-evenly">
+            <div id="right" className="flex-1 text-white flex items-center gap-1 md:gap-6 justify-end">
                 {!search ? <div className=" hover:opacity-70 cursor-pointer" onClick={() => { setSearch(true) }}> <SearchIcon /></div> :
                     <div className="  cursor-pointer"> <div className="pl-2 rounded-md flex items-center gap-1  bg-gray-100 text-black"> <div onClick={() => { setSearch(false) }}><SearchIcon /></div>
                         <input className="focus:outline-none  p-1 bg-transparent w-28 md:w-full" type="text" placeholder="Search.."></input>
