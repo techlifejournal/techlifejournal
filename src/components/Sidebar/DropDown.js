@@ -7,9 +7,9 @@ function SideMenu() {
     const [Category, setCategoty] = useState(true);
     return (
 
-            <div className="m-5">
+            <div className="p-4">
                 <button onClick={() => { setCategoty(!Category) }}
-                    className="flex items-center text-lg font-semib cursor-pointer">
+                    className="flex items-center text-lg  cursor-pointer">
                     {Category?<><BsFillCaretDownFill/>  <FiMinus/> </> :<><BsFillCaretRightFill/> <FiPlus /> </>}
                     Category
                 </button>

@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         techlife: "#001440",
-        sidenav: "#001440"
+        sidenav: "#001440",
+        content: "#dedede",
       },
       borderWidth: {
         '1': '0.5px'

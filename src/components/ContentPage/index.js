@@ -8,7 +8,7 @@ function Index() {
         return Math.round((ContentData.length + 1) / n).toString()
     }
     return (
-        <section id="Content" className="flex  m-3 shadow-2xl sm:m-5 md:mx-14 border-l-1  border-r-1 border-gray-500 ">
+        <section id="Content" className="flex t  m-3 shadow-2xl sm:m-5 md:mx-14 border-l-1  border-r-1 border-gray-500 ">
 
             <div className="w-full">
                 <header className=" text-center flex justify-center border-t-1 border-b-1 border-gray-500" >

@@ -22,7 +22,7 @@ function Nav() {
             {/* Navigations   */}
             <div id="center" className="hidden  md:flex font-medium text-xs    text-white justify-center">
                 {navs.map((ele, index) => {
-                    return <div className={`   ${index ? "border-l-1 border-opacity-50" : ""} px-5  hover:opacity-70 cursor-pointer `}>
+                    return <div className={`   ${index ? "border-l-1 border-opacity-50" : ""} px-5  hover:opacity-70   cursor-pointer `}>
                         <span>{ele.name}</span>
                     </div>
                 })}
