@@ -3,29 +3,13 @@
 @tailwind utilities;
 
 body:root {
-  --page_background: #DEDEDE;
-  --page_background_darker: #C0C0C0;
-  --line_color: black;
-  --text_black: black;
-  --text_gray: #626262;
-  --marker: #FEEC01;
-  --margin: 15px;
-  --indent: 10px;
-  --finger: 48px;
-  --header: 120px;
-  --column: 287px;
-  --offset: 287px;
-  --forma_size: 15px;
-  --recta_uppercase_size: 16px;
   --recta_size: 17px;
-  --logo_size: 30px;
+
   --line_height: 16px;
-  --text_line_height: 17px;
-  --logo_line_height: 26px;
 }
 
 body {
-  background-color: #dfdfdf;
+  background-color: #dedede;
   font-family: "Recta";
   -webkit-font-smoothing: antialiased;
   font-size: var(--recta_size);
@@ -53,5 +37,12 @@ body::-webkit-scrollbar-thumb {
   font-family: "Copperplate", "Papyrus", "fantasy";
 }
 
-
-
+.heading-fill {
+  
+  background: linear-gradient(to left, transparent 50%, rgba(150, 123, 212, 0.7) 50%) right;
+  background-size: 200%;
+  transition: 0.2s ease-out;
+}
+.heading-fill-left:hover .heading-fill{
+  background-position: left;
+}

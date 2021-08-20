@@ -18,11 +18,12 @@ function Index() {
                     grid-rows-${rows(1)} sm:grid-rows-${rows(2)}  md:grid-rows-${rows(3)} lg:grid-rows-${rows(4)} 
                     grid-flow-col   `}>
                     {ContentData.map((ele, index) => {
-                        return <><div className="px-2 border-r-1 border-gray-500"
+                        return <>
+                        <div className="px-2 border-r-1 border-gray-500 heading-fill-left "
                         >{ele.section && <h1 className="text-4xl">{ele.section}
 
                         </h1>}  <div className="flex items-end gap-1">
-                                <h2 className="text-xl  font-bold"> {ele.heading}</h2><div className="w-full mb-1 border-b-1 border-black border-dashed "></div>
+                                <h2 className="text-xl  font-bold cursor-pointer heading-fill"> {ele.heading}</h2><div className="w-full mb-1 border-b-1 border-black border-dashed "></div>
                                 <FiArrowUpRight style={{ fontSize: "1.5rem" }} />
                             </div>
                             <div className="lowercase">
