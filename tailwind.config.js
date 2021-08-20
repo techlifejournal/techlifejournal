@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        techlife: "#001440",
-        sidenav: "#212121"
+        techlife: "#170055",
+        sidenav: "#170055"
       },
       borderWidth: {
         '1': '0.5px'
