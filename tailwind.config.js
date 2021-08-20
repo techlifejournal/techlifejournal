@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        techlife: "#141414",
+        techlife: "#001440",
         sidenav: "#212121"
       },
       borderWidth: {
@@ -21,6 +21,7 @@ module.exports = {
         '11': 'repeat(11, minmax(0, 1fr))',
         '12': 'repeat(12, minmax(0, 1fr))',
         '24': 'repeat(24, minmax(0, 1fr))',
+        '15': 'repeat(15, minmax(0, 1fr))',
 
 
 

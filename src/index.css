@@ -2,28 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+body:root {
+  --page_background: #DEDEDE;
+  --page_background_darker: #C0C0C0;
+  --line_color: black;
+  --text_black: black;
+  --text_gray: #626262;
+  --marker: #FEEC01;
+  --margin: 15px;
+  --indent: 10px;
+  --finger: 48px;
+  --header: 120px;
+  --column: 287px;
+  --offset: 287px;
+  --forma_size: 15px;
+  --recta_uppercase_size: 16px;
+  --recta_size: 17px;
+  --logo_size: 30px;
+  --line_height: 16px;
+  --text_line_height: 17px;
+  --logo_line_height: 26px;
+}
 
 body {
-    background-color: #DFDFDF;
-    font-family:  'Recta';
+  background-color: #dfdfdf;
+  font-family: "Recta";
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--recta_size);
+  line-height: var(--line_height);
 }
 
 body::-webkit-scrollbar {
-    width: 0.5rem;
-  }
-   
-  body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
-  }
-   
-  body::-webkit-scrollbar-thumb {
-    background-color: rgb(20, 20, 20);
-    outline: 0.5px solid rgb(255, 255, 255);
-  }
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(20, 20, 20);
+  outline: 0.5px solid rgb(255, 255, 255);
+}
 
 .navfont {
-    font-family: "PT Sans",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "PT Sans", HelveticaNeue-Light, "Helvetica Neue Light",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.titlefont{
-    font-family: "Copperplate", "Papyrus", "fantasy";
+.titlefont {
+  font-family: "Copperplate", "Papyrus", "fantasy";
 }
+
+
+

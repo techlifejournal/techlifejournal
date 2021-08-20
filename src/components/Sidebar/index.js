@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import React, { useState } from 'react';
 import { SidebarData } from './SidebarData';
 import MenuIcon from '@material-ui/icons/Menu';
+import DropDown from './DropDown'
 function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
 
@@ -17,10 +18,10 @@ function Sidebar() {
                 </div>
 
                 <div className={sidebar ? 'sidebar-menu bg-sidenav active ' : 'sidebar-menu bg-sidenav'}>
-                    <div className='menu-items w-full' onClick={showSidebar}>
+                    <div className='menu-items w-full' >
                         <div className='flex items-center'>
 
-                            <div className="px-3 py-5 hover:opacity-70 "><CloseIcon /></div>
+                            <div className="px-3 py-5 hover:opacity-70 " onClick={showSidebar}><CloseIcon /></div>
                             <div className="titlefont pr-2 hidden md:block font-semibold">
                                 <span className="text-gray-300">TECH</span>
                                 <span className="text-gray-100">LIFE</span>
@@ -36,7 +37,10 @@ function Sidebar() {
                                     </div>
                                 );
                             })}
+                            
                         </div>
+                        <DropDown/>
+                    
                     </div>
                 </div>
             </div>

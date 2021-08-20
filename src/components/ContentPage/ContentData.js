@@ -1,11 +1,10 @@
 export const ContentData = [
+
     {
-        section : 'A'
-    },
-    {
+        section : 'A',
         heading: "Arduino",
         sections: [
-            { name: "Data Flow", url: "" },
+            { name: "art direction", url: "" },
             { name: "Data Types", url: "" },
             { name: "Functions", url: "" },
             { name: "Syntax", url: "" },
@@ -109,10 +108,9 @@ export const ContentData = [
 
         ]
     },
+  
     {
-        section :"B"
-    },
-    {
+        section : 'B',
         heading: "Bash",
         sections: [
         
@@ -149,10 +147,9 @@ export const ContentData = [
 
         ]
     },
+    
     {
-        section : 'C'
-    },
-    {
+        section : 'C',
         heading: "C",
         sections: [
             { name: "Data Flow", url: "" },
