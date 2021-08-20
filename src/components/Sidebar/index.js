@@ -16,7 +16,7 @@ function Sidebar() {
                     <MenuIcon onClick={showSidebar} />
                 </div>
 
-                <div className={sidebar ? 'sidebar-menu active ' : 'sidebar-menu'}>
+                <div className={sidebar ? 'sidebar-menu bg-sidenav active ' : 'sidebar-menu bg-sidenav'}>
                     <div className='menu-items w-full' onClick={showSidebar}>
                         <div className='flex items-center'>
 
@@ -58,7 +58,7 @@ const SidebarWrapper = styled.div`
 .sidebar-menu {
     overflow-y : scroll;
     top: 0rem;
-    background-color: #212121;
+ 
     height: 100vh;
     display: flex;
     justify-content: center;
