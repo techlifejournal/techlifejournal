@@ -4,9 +4,17 @@ import ContentPage from './components/ContentPage'
 import {useState} from 'react'
 function App() {
   const [dark , setDark] = useState(false)
+  if(dark){
+    document.body.classList.add('dark')
+    document.body.classList.add('bg-dark')
+  }
+  else {
+    document.body.classList.remove('dark') 
+    document.body.classList.remove('bg-dark') 
+  }
   return (
-    <div className={`${dark && 'dark'} App`}>
-      <div className = "bg-light dark:bg-dark dark:text-white">
+    <div className={`App`}>
+      <div className = "  dark:text-white">
       <Navbar dark= {dark}  setDark = {setDark} />
       <HomePage/>
       <ContentPage/>

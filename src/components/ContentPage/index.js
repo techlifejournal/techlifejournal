@@ -17,14 +17,14 @@ function Index() {
                 <div className={`grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ${' '
                     //grid-rows-${rows(1)} sm:grid-rows-${rows(2)}  md:grid-rows-${rows(3)} lg:grid-rows-${rows(4)} 
                     //grid-flow-row
-                 }  `}>
+                    }  `}>
                     {ContentData.map((ele, index) => {
                         return <>
-                            <div className="px-2 border-r-1 border-gray-500 heading-fill-left "
+                            <div className="px-2 border-r-1 border-gray-500 heading-fill-left  "
                             >{ele.section ? <h1 className="text-4xl text-semibold">{ele.section}
 
-                            </h1> : <h1 className="h-10"></h1>}  <a href = "#" className="flex items-end gap-1">
-                                    <h2  className="text-base font-semibold  cursor-pointer heading-fill"> {ele.heading}</h2><div className="w-full mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
+                            </h1> : <h1 className="h-10"></h1>}  <a href="#" className="flex items-end gap-1">
+                                    <h2 className="text-base font-semibold  cursor-pointer  heading-fill dark-theme"> {ele.heading}</h2><div className="w-full mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
                                     <FiArrowUpRight style={{ fontSize: "1.5rem" }} />
                                 </a>
                                 <div className="lowercase dark:text-adark">

@@ -1,16 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic");
 body:root {
   --recta_size: 17px;
-
+  --title_hover_dark: #245abd;
+  --title_hover_light: #abc4ff;
   --line_height: 16px;
 }
 
+
 body {
+  
   background-color: #edf2fb;
-  font-family: 'Didact Gothic';
+  font-family: "Didact Gothic";
   -webkit-font-smoothing: antialiased;
   font-size: var(--recta_size);
   line-height: var(--line_height);
@@ -37,18 +40,18 @@ body::-webkit-scrollbar-thumb {
   font-family: "Copperplate", "Papyrus", "fantasy";
 }
 
+#content {
+  line-height: normal;
+}
+
 .heading-fill {
-  
-  background: linear-gradient(to left, transparent 50%, #abc4ff 50%) right;
+  background: linear-gradient(to left, transparent 50%, #39A2DB 50%)
+    right;
+
   background-size: 200%;
   transition: 0.2s ease-out;
 }
-.heading-fill-left:hover .heading-fill{
-  background-position: left;
-}
 
-#content {
-  
-    line-height: normal;
-  
+.heading-fill-left:hover .heading-fill {
+  background-position: left;
 }
