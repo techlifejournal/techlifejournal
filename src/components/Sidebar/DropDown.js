@@ -9,7 +9,7 @@ function SideMenu() {
 
         <>
             <button onClick={() => { setCategoty(!Category) }}
-                className="flex items-center hover:bg-sidehover px-2 py-3 md:p-4 gap-2">
+                className="flex items-center hover:bg-sidehover_lt dark:hover:bg-black px-2 py-3 md:p-4 gap-2">
                 {Category ? <><BsFillCaretDownFill />  </> : <><BsFillCaretRightFill /> </>}
                 <span>Category</span>
             </button>
@@ -33,7 +33,6 @@ function SideMenu() {
 export default SideMenu
 const DropDown = styled.div`
 a:hover {
-    color: black;
     cursor: pointer;
     text-decoration : underline;
 }

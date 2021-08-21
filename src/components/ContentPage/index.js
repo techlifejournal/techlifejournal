@@ -24,10 +24,10 @@ function Index() {
                             >{ele.section ? <h1 className="text-4xl text-semibold">{ele.section}
 
                             </h1> : <h1 className="h-10"></h1>}  <a href = "#" className="flex items-end gap-1">
-                                    <h2  className="text-base font-semibold  cursor-pointer heading-fill"> {ele.heading}</h2><div className="w-full mb-1 border-b-1 border-black border-dashed "></div>
+                                    <h2  className="text-base font-semibold  cursor-pointer heading-fill"> {ele.heading}</h2><div className="w-full mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
                                     <FiArrowUpRight style={{ fontSize: "1.5rem" }} />
                                 </a>
-                                <div className="lowercase">
+                                <div className="lowercase dark:text-adark">
                                     {
                                         ele.sections.map((topic) => {
                                             return <a href={topic.url} > {topic.name},</a>

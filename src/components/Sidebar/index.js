@@ -19,7 +19,7 @@ function Sidebar() {
                         <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
                 </div>
 
-                <div className={sidebar ? 'sidebar-menu bg-sidenav active ' : 'sidebar-menu bg-sidenav' }>
+                <div className={sidebar ? 'sidebar-menu bg-nav_lt dark:bg-dark active ' : 'sidebar-menu bg-sidenav' }>
                     <div className='menu-items w-60 md:w-72 ' >
                         <div className="flex flex-col ">
                             {SidebarData.map((item, index) => {

@@ -2,15 +2,18 @@
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
-        techlife: "#edf2fb",
-        sidenav: "#edf2fb",
-        content: "#dedede",
-        sidehover : "#d7e3fc",
-        navhover : "#abc4ff"
+        nav_lt: "#edf2fb",
+        sidenav_lt: "#edf2fb",
+        light: "#edf2fb",
+        dark: "#1E1E1E",
+        content_lt: "#dedede",
+        sidehover_lt: "#d7e3fc",
+        adark : "#D4D4D4"
+
       },
       borderWidth: {
         '1': '0.5px'
