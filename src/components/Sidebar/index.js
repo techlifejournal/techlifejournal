@@ -20,7 +20,7 @@ function Sidebar() {
                 </div>
 
                 <div className={sidebar ? 'sidebar-menu bg-sidenav active ' : 'sidebar-menu bg-sidenav' }>
-                    <div className='menu-items w-72 ' >
+                    <div className='menu-items w-60 md:w-72 ' >
                         <div className="flex flex-col ">
                             {SidebarData.map((item, index) => {
                                 return (
@@ -54,9 +54,9 @@ const SidebarWrapper = styled.div`
 }
 
 .sidebar-menu {
-    overflow-y : scroll;
-    top: 4rem;
     
+    top: 4rem;
+    box-shadow: 10px 3px 5px rgba(0, 0, 0, 0.1);;
     height: 100vh;
     display: flex;
     justify-content: center;
