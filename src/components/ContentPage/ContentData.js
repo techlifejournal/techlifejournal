@@ -1,7 +1,7 @@
 export const ContentData = [
 
     {
-        section : 'A',
+        section: 'A',
         heading: "Arduino",
         sections: [
             { name: "art direction", url: "" },
@@ -14,7 +14,7 @@ export const ContentData = [
             { name: "Array", url: "" },
             { name: "Function", url: "" },
             { name: "Class", url: "" },
-           
+
             { name: "Packages", url: "" },
             { name: "Static Methods", url: "" },
             { name: "Modules", url: "" },
@@ -34,7 +34,6 @@ export const ContentData = [
             { name: "Compiler", url: "" },
             { name: "Algorithm", url: "" },
             { name: "Array", url: "" },
-          
             { name: "Class", url: "" },
             { name: "Recursion", url: "" },
             { name: "OOPS", url: "" },
@@ -64,7 +63,7 @@ export const ContentData = [
             { name: "OOPS", url: "" },
             { name: "Variables", url: "" },
             { name: "Packages", url: "" },
-            
+
 
 
         ]
@@ -108,12 +107,12 @@ export const ContentData = [
 
         ]
     },
-  
+
     {
-        section : 'B',
+        section: 'B',
         heading: "Bash",
         sections: [
-        
+
             { name: "OOPS", url: "" },
             { name: "Variables", url: "" },
             { name: "Packages", url: "" },
@@ -131,7 +130,7 @@ export const ContentData = [
     {
         heading: "Bash",
         sections: [
-           
+
             { name: "Algorithm", url: "" },
             { name: "Array", url: "" },
             { name: "Function", url: "" },
@@ -147,9 +146,9 @@ export const ContentData = [
 
         ]
     },
-    
+
     {
-        section : 'C',
+        section: 'C',
         heading: "C",
         sections: [
             { name: "Data Flow", url: "" },
