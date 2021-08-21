@@ -7,25 +7,25 @@ function SideMenu() {
     const [Category, setCategoty] = useState(true);
     return (
 
-            <div className="p-4">
-                <button onClick={() => { setCategoty(!Category) }}
-                    className="flex items-center text-lg  cursor-pointer">
-                    {Category?<><BsFillCaretDownFill/>  <FiMinus/> </> :<><BsFillCaretRightFill/> <FiPlus /> </>}
-                    Category
-                </button>
-                {Category && <DropDown className="uppercase font-semibold text-gray-100 hover:text-gray-500 grid grid-cols-2">
-                    <a>Python</a>
-                    <a>JavaScript</a>
-                    <a>C++</a>
-                    <a>C</a>
-                    <a>C#</a>
-                    <a>Java</a>
-                    <a>Rust</a>
-                    <a>Go</a>
-                    <a>Kotlin</a>
-                    <a>TypeScript</a>
-                </DropDown>}
-            </div>
+        <>
+            <button onClick={() => { setCategoty(!Category) }}
+                className="flex items-center hover:bg-sidehover px-2 py-3 md:p-4 gap-2">
+                {Category ? <><BsFillCaretDownFill />  </> : <><BsFillCaretRightFill /> </>}
+                <span>Category</span>
+            </button>
+            {Category && <DropDown className=" text-sm font-b px-2 py-3 md:p-4    grid grid-cols-2">
+                <a>Python</a>
+                <a>JavaScript</a>
+                <a>C++</a>
+                <a>C</a>
+                <a>C#</a>
+                <a>Java</a>
+                <a>Rust</a>
+                <a>Go</a>
+                <a>Kotlin</a>
+                <a>TypeScript</a>
+            </DropDown>}
+        </>
 
     )
 }
@@ -33,7 +33,8 @@ function SideMenu() {
 export default SideMenu
 const DropDown = styled.div`
 a:hover {
-    color: white;
+    color: black;
     cursor: pointer;
+    text-decoration : underline;
 }
 `

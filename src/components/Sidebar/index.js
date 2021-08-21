@@ -12,21 +12,15 @@ function Sidebar() {
 
     return (
         <SidebarWrapper>
-            <div>
-                <div className="cursor-pointer hover:opacity-70">
-                    <MenuIcon onClick={showSidebar} />
+            <>
+
+                <div className="items-center cursor-pointer hover:opacity-70" >
+                    {!sidebar ?
+                        <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
                 </div>
 
-                <div className={sidebar ? 'sidebar-menu bg-sidenav active ' : 'sidebar-menu bg-sidenav'}>
-                    <div className='menu-items w-full' >
-                        <div className='flex items-center'>
-
-                            <div className="px-3 py-5 hover:opacity-70 " onClick={showSidebar}><CloseIcon /></div>
-                            <div className="titlefont pr-2 hidden md:block font-semibold">
-                                <span className="text-gray-300">TECH</span>
-                                <span className="text-gray-100">LIFE</span>
-                                <span className="text-white">JOURNAL</span>  </div>
-                        </div>
+                <div className={sidebar ? 'sidebar-menu bg-sidenav active ' : 'sidebar-menu bg-sidenav' }>
+                    <div className='menu-items w-72 ' >
                         <div className="flex flex-col ">
                             {SidebarData.map((item, index) => {
                                 return (
@@ -37,13 +31,13 @@ function Sidebar() {
                                     </div>
                                 );
                             })}
-                            
+
+                            <DropDown />
                         </div>
-                        <DropDown/>
-                    
+
                     </div>
                 </div>
-            </div>
+            </>
         </SidebarWrapper>
     );
 }
@@ -52,7 +46,7 @@ export default Sidebar;
 
 const SidebarWrapper = styled.div`
 .sidebar {
- 
+    
     background-color: #060b26;
     display: flex;
     justify-content: start;
@@ -61,8 +55,8 @@ const SidebarWrapper = styled.div`
 
 .sidebar-menu {
     overflow-y : scroll;
-    top: 0rem;
- 
+    top: 4rem;
+    
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -80,6 +74,9 @@ const SidebarWrapper = styled.div`
     background-color: black;
     outline: 1px solid gray;
     }
+    @media only screen and (max-width: 768px) {
+        top : 3.5rem;
+  }
 
 }
 .sidebar-menu.active {

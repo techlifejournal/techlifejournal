@@ -5,7 +5,7 @@ import React from 'react'
 function SidebarRow({ name, src , icon }) {
 
     return (
-        <div className = "flex items-center hover:bg-black p-4 gap-2">
+        <div className = "flex items-center hover:bg-sidehover px-2 py-3 md:p-4 gap-2">
             {icon}
             <h4>{name}</h4>
         </div>
