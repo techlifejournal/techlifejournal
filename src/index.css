@@ -55,3 +55,7 @@ body::-webkit-scrollbar-thumb {
 .heading-fill-left:hover .heading-fill {
   background-position: left;
 }
+
+code {
+  white-space: pre-wrap;
+}
