@@ -1,30 +1,43 @@
 export const Article1 = `
 
-    
-<p align="center">
-  <a href="https://github.com/uiwjs/react-markdown-editor/actions">
-    <img alt="Build & Deploy" src="https://github.com/uiwjs/react-markdown-editor/workflows/Build%20&%20Deploy/badge.svg">
-  </a>
-  <a href="https://github.com/uiwjs/react-markdown-editor/issues">
-    <img alt="Issues" src="https://img.shields.io/github/issues/uiwjs/react-markdown-editor.svg">
-  </a>
-  <a href="https://github.com/uiwjs/react-markdown-editor/network">
-    <img alt="Forks" src="https://img.shields.io/github/forks/uiwjs/react-markdown-editor.svg">
-  </a>
-  <a href="https://github.com/uiwjs/react-markdown-editor/stargazers">
-    <img alt="Stars" src="https://img.shields.io/github/stars/uiwjs/react-markdown-editor.svg">
-  </a>
-  <a href="https://github.com/uiwjs/react-markdown-editor/releases">
-    <img alt="Release" src="https://img.shields.io/github/release/uiwjs/react-markdown-editor.svg">
-  </a>
-  <a href="https://www.npmjs.com/package/@uiw/react-markdown-editor">
-    <img alt="npm version" src="https://img.shields.io/npm/v/@uiw/react-markdown-editor.svg">
-  </a>
-</p>
+<h1 class = "" > Article<h1>
 
-<p align="center">
-  A markdown editor with preview, implemented with React.js and TypeScript.
-</p>
+
+
+
+
+\`\`\`jsx
+import Navbar from './components/Navbar'
+import HomePage from './components/HomePage'
+import ContentPage from './components/ContentPage'
+import Article from './components/Article'
+import { useState } from 'react'
+function App() {
+  const [dark, setDark] = useState(false)
+  if (dark) {
+    document.body.classList.add('dark')
+    document.body.classList.add('bg-dark')
+  }
+  else {
+    document.body.classList.remove('dark')
+    document.body.classList.remove('bg-dark')
+  }
+  return (
+    <div className={\`App\`}>
+      <div className="  dark:text-white">
+        <Navbar dark={dark} setDark={setDark} />
+        <HomePage />
+        <ContentPage />
+        <Article />
+      </div>
+    </div >
+  );
+}
+
+export default App;
+
+\`\`\`
+
 
 ## Install
 
