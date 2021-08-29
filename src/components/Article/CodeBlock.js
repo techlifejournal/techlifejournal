@@ -2,7 +2,7 @@
 import React from "react"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { solarizedlight, atomDark, a11yDark, materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { github , atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 const CodeBlock = () => {
   return {
     code({ node, inline, className, children, ...props }) {

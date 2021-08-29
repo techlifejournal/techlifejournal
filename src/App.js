@@ -15,7 +15,7 @@ function App() {
   }
   return (
     <div className={`App`}>
-      <div className="  dark:text-white">
+      <div className="  dark:text-white ">
         <Navbar dark={dark} setDark={setDark} />
         <HomePage />
         <ContentPage />

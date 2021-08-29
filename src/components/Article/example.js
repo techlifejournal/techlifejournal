@@ -1,6 +1,6 @@
 export const Article1 = `
 
-<h1 class = "" > Article<h1>
+<h1 class = "" > Article</h1>
 
 
 

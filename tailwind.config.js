@@ -1,4 +1,5 @@
 
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
@@ -12,8 +13,7 @@ module.exports = {
         dark: "#1E1E1E",
         content_lt: "#dedede",
         sidehover_lt: "#d7e3fc",
-        adark : "#D4D4D4"
-
+        adark: "#D4D4D4"
       },
       borderWidth: {
         '1': '0.5px'
@@ -28,10 +28,6 @@ module.exports = {
         '12': 'repeat(12, minmax(0, 1fr))',
         '24': 'repeat(24, minmax(0, 1fr))',
         '15': 'repeat(15, minmax(0, 1fr))',
-
-
-
-
       }
     },
   },
@@ -40,6 +36,13 @@ module.exports = {
     extend: {},
   },
   plugins: [
-
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        'h1': { fontSize: theme('fontSize.3xl') },
+        'h2': { fontSize: theme('fontSize.2xl') },
+        'h3': { fontSize: theme('fontSize.xl') },
+        'h4': { fontSize: theme('fontSize.lg') },
+      })
+    })
   ],
 }
