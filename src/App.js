@@ -2,13 +2,13 @@ import Navbar from './components/Navbar'
 import HomePage from './components/HomePage'
 import ContentPage from './components/ContentPage'
 import Article from './components/Article'
-import DarkLightTheme from './context/darkmodeContext'
+import Contexts from './context'
 import { useState } from 'react'
 function App() {
 
 
   return (
-    <DarkLightTheme>
+    <Contexts>
       <div className={`App`}>
         <div className="  dark:text-white ">
           <Navbar />
@@ -17,7 +17,7 @@ function App() {
           <Article />
         </div>
       </div >
-    </DarkLightTheme>
+    </Contexts>
 
   );
 }

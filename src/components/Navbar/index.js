@@ -30,7 +30,7 @@ function Nav() {
                 {/*  Search Icon and UserIcon */}
                 <div id="right" className="  flex-1  flex items-center gap-2 md:gap-6 justify-end">
                     {!search ? <div className=" hover:opacity-70 cursor-pointer" onClick={() => { setSearch(true) }}> <SearchIcon /></div> :
-                        <div className="  cursor-pointer"> <div className="pl-2 rounded-md flex items-center gap-1 border-1 border-gray-300"> <div onClick={() => { setSearch(false) }}><SearchIcon /></div>
+                        <div className="  cursor-pointer"> <div className="pl-2 rounded-md flex items-center gap-1 border-1 border-gray-300 dark:border-gray-500"> <div onClick={() => { setSearch(false) }}><SearchIcon /></div>
                             <input className="focus:outline-none  p-1 bg-transparent w-36  sm:w-38 md:w-full" type="text" placeholder="Search.."></input>
                         </div></div>}
 

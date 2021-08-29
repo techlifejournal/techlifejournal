@@ -7,21 +7,21 @@ import { DarkLightContext } from '../../context/darkmodeContext'
 function Index() {
     const [dark, setDark] = useContext(DarkLightContext)
     return (
-        <section id="content" className="flex m-3 shadow-2xl sm:m-5 md:mx-14 border-1  pb-5 border-gray-500 ">
-
-            <div className="w-full">
+        <section id="content" className="flex-col m-3 shadow-2xl sm:m-5 md:mx-14 border-1  pb-5 border-gray-500 ">
                 <Header />
-                <div className={`grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ${' '
-                    //grid-rows-${rows(1)} sm:grid-rows-${rows(2)}  md:grid-rows-${rows(3)} lg:grid-rows-${rows(4)} 
-                    //grid-flow-row
-                    }  `}>
+                <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {ContentData.map((ele, index) => {
                         return <>
                             <div className="px-2 border-r-1 border-gray-500 heading-fill-left  "
                             >{ele.section ? <h1 className="text-4xl text-semibold">{ele.section}
 
-                            </h1> : <h1 className="h-10"></h1>}  <a href="#" className="flex items-end gap-1">
-                                    <h2 className={`text-base font-semibold  cursor-pointer ${dark ? 'heading-fill-dark' : 'heading-fill'} dark-theme`}> {ele.heading}</h2><div className="w-full mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
+                            </h1> : <h1 className="h-10"></h1>}
+                                <a href="#" className="flex items-end gap-1">
+                                    <h2 className={`text-base font-semibold  cursor-pointer 
+                                            ${dark ? 'heading-fill-dark' : 'heading-fill'} dark-theme`}>
+                                        {ele.heading}
+                                    </h2>
+                                    <div className="w-full mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
                                     <FiArrowUpRight style={{ fontSize: "1.5rem" }} />
                                 </a>
                                 <div className="lowercase dark:text-adark">
@@ -34,11 +34,7 @@ function Index() {
                             </div>
                         </>
                     })}
-                </div>
             </div>
-
-
-
         </section>
     )
 }

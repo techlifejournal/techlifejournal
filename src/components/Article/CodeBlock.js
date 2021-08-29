@@ -1,7 +1,7 @@
 // ./CodeBlock.js
 import React from "react"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { materialDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { materialDark  } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const CodeBlock = () => {
   return {
@@ -10,10 +10,10 @@ const CodeBlock = () => {
       return !inline && match ? (
         <SyntaxHighlighter
           children={String(children).replace(/\n$/, '')}
-          style = { materialDark}
+          style={materialDark}
           language={match[1]}
           PreTag="div"
-          showLineNumbers = {true}
+          showLineNumbers={true}
           wrapLongLines={true}
           {...props}
         />
