@@ -45,12 +45,27 @@ body::-webkit-scrollbar-thumb {
 }
 
 .heading-fill {
-  background: linear-gradient(to left, transparent 50%, #39a2db 50%) right;
+  background: linear-gradient(to left, transparent 50%, #abc4ff 50%) right;
+
+  background-size: 200%;
+  transition: 0.2s ease-out;
+}
+.heading-fill-dark {
+  background: linear-gradient(to left, transparent 50%, #245abd 50%) right;
 
   background-size: 200%;
   transition: 0.2s ease-out;
 }
 
-.heading-fill-left:hover .heading-fill {
+.heading-fill-left:hover .heading-fill , .heading-fill-left:hover .heading-fill-dark {
   background-position: left;
+}
+
+
+.article > h1 {
+  font-weight: 700;
+}
+.article > h2,
+h {
+  font-weight: 600;
 }

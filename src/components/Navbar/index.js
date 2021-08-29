@@ -5,7 +5,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import PersonIcon from '@material-ui/icons/Person';
 import Sidebar from '../Sidebar';
 import DarkLightBtn from './DarkLightToggle'
-function Nav({dark , setDark}) {
+function Nav() {
     const [search, setSearch] = useState(false);
     return (
         <section id="navbar" className="w-full fixed  z-10 shadow-lg" >
@@ -14,7 +14,7 @@ function Nav({dark , setDark}) {
                 <div id="left" className={`flex-1 items-center  md:ml-2 flex gap-2 cursor-pointer`}>
                     <Sidebar />
 
-                    <div className={` ${search ? 'hidden md:block' : 'block '} items-center text-xl ml-2 font-semibold`}>
+                    <div className={` ${search ? 'hidden md:block' : 'block '} sm:text-xl items-center  ml-2 font-semibold`}>
                         TECHLIFEJOURNAL </div>
                 </div>
 
@@ -31,14 +31,14 @@ function Nav({dark , setDark}) {
                 <div id="right" className="  flex-1  flex items-center gap-2 md:gap-6 justify-end">
                     {!search ? <div className=" hover:opacity-70 cursor-pointer" onClick={() => { setSearch(true) }}> <SearchIcon /></div> :
                         <div className="  cursor-pointer"> <div className="pl-2 rounded-md flex items-center gap-1 border-1 border-gray-300"> <div onClick={() => { setSearch(false) }}><SearchIcon /></div>
-                            <input className="focus:outline-none  p-1 bg-transparent w-38 md:w-full" type="text" placeholder="Search.."></input>
+                            <input className="focus:outline-none  p-1 bg-transparent w-36  sm:w-38 md:w-full" type="text" placeholder="Search.."></input>
                         </div></div>}
 
                     <div className=" hover:opacity-70 cursor-pointer hidden sm:block"> <PersonIcon /></div>
-                    <DarkLightBtn enabled = {dark} setEnabled = {setDark} />
+                    <DarkLightBtn />
                 </div>
             </div>
-            
+
         </section>
     )
 }

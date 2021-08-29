@@ -1,11 +1,13 @@
 
 import { Switch } from '@headlessui/react'
-import {BsSun} from 'react-icons/bs'
-export default function Button({enabled , setEnabled}) {
-  
-  
+import { BsSun } from 'react-icons/bs'
+import { useContext } from 'react'
+import { DarkLightContext } from '../../context/darkmodeContext'
+export default function Button() {
+
+  const [enabled, setEnabled] = useContext(DarkLightContext)
   return (
-      
+
     <>
       <Switch
         checked={enabled}
