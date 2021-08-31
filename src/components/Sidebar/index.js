@@ -21,7 +21,7 @@ function Sidebar() {
 
                 <div className={sidebar ? 'sidebar-menu bg-nav_lt dark:bg-dark active ' : 'sidebar-menu bg-sidenav' }>
                     <div className='menu-items w-60 md:w-72 ' >
-                        <div className="flex flex-col ">
+                        <div className="flex flex-col navfont">
                             {SidebarData.map((item, index) => {
                                 return (
                                     <div key={index} className={item.cName}>

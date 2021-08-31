@@ -16,9 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: var(--recta_size);
 }
-#content {
-  line-height: var(--line_height);
-}
+
 body::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -28,20 +26,21 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(20, 20, 20);
-  outline: 0.5px solid rgb(255, 255, 255);
+  background-color: rgb(47, 47, 47);
+  border-radius: 10px;
+}
+
+#content {
+  line-height: normal;
 }
 
 .navfont {
   font-family: "PT Sans", HelveticaNeue-Light, "Helvetica Neue Light",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 .titlefont {
   font-family: "Copperplate", "Papyrus", "fantasy";
-}
-
-#content {
-  line-height: normal;
 }
 
 .heading-fill {
@@ -57,15 +56,15 @@ body::-webkit-scrollbar-thumb {
   transition: 0.2s ease-out;
 }
 
-.heading-fill-left:hover .heading-fill , .heading-fill-left:hover .heading-fill-dark {
+.heading-fill-left:hover .heading-fill,
+.heading-fill-left:hover .heading-fill-dark {
   background-position: left;
 }
-
 
 .article > h1 {
   font-weight: 700;
 }
 .article > h2,
-h {
+h3 {
   font-weight: 600;
 }
