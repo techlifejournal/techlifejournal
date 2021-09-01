@@ -19,6 +19,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 0.5rem;
+  background-color: transparent;
 }
 
 body::-webkit-scrollbar-track {
@@ -68,3 +69,4 @@ body::-webkit-scrollbar-thumb {
 h3 {
   font-weight: 600;
 }
+

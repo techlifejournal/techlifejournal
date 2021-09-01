@@ -1,9 +1,11 @@
 import DarkLightTheme from './darkmodeContext'
-
+import ScrollContextProvider from './ScrollContext'
 export default function Contexts(props) {
    return <DarkLightTheme>
-      {props.children}
-      </DarkLightTheme>
+      <ScrollContextProvider>
+         {props.children}
+      </ScrollContextProvider>
+   </DarkLightTheme>
 }
 
 

@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import navs from "./navigations"
-import MenuIcon from '@material-ui/icons/Menu';
 import PersonIcon from '@material-ui/icons/Person';
 import Sidebar from '../Sidebar';
 import DarkLightBtn from './DarkLightToggle'
-import { useScroll } from '../../Utility/ScrollEvent'
+import { ScrollContext } from '../../context/ScrollContext'
 function Nav() {
-    const scroll = useScroll()
+    const scroll = useContext(ScrollContext);
     const [search, setSearch] = useState(false);
     return (
         <section id="navbar" className="w-full fixed  z-10 shadow-lg" >
