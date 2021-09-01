@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        nav_lt: "#edf2fb",
-        sidenav_lt: "#edf2fb",
-        light: "#edf2fb",
+        nav_lt: "#ffffff",
+        sidenav_lt: "#ffffff",
+        light: "#ffffff",
         dark: "#1E1E1E",
         content_lt: "#dedede",
         sidehover_lt: "#d7e3fc",

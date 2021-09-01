@@ -5,11 +5,12 @@ import React, { useState } from 'react';
 import { SidebarData } from './SidebarData';
 import MenuIcon from '@material-ui/icons/Menu';
 import DropDown from './DropDown'
+import { useScroll } from '../../Utility/ScrollEvent'
+
 function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
-
     const showSidebar = () => setSidebar(!sidebar);
-
+    
     return (
         <SidebarWrapper>
             <>
@@ -19,7 +20,7 @@ function Sidebar() {
                         <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
                 </div>
 
-                <div className={sidebar ? 'sidebar-menu bg-nav_lt dark:bg-dark active ' : 'sidebar-menu bg-sidenav' }>
+                <div className={`sidebar-menu ${sidebar && '  active '} bg-nav_lt dark:bg-dark `}>
                     <div className='menu-items w-60 md:w-72 ' >
                         <div className="flex flex-col navfont">
                             {SidebarData.map((item, index) => {

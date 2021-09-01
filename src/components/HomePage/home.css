@@ -4,8 +4,18 @@
   --gradiant-4: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
   --gradiant-5: linear-gradient(90deg, #fccb90 0%, #d57eeb 100%);
   --gradiant-6: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  --gradiant-7: linear-gradient(90deg, #30cfd0 0%, #330867 100%);
+  --gradiant-8: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  --gradiant-9: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  --gradiant-10: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  --gradiant-11: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  --gradiant-12: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
 }
 
 .gradient {
-  background: var(--gradiant-4);
+  background: var(--gradiant-5);
+}
+
+.gradient-dark {
+    background: var(--gradiant-8);
 }

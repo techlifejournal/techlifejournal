@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css?family=Didact+Gothic");
+
 :root {
   --recta_size: 17px;
   --title_hover_dark: #245abd;
@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: #edf2fb;
+  background-color: #ffffff;
   font-family: "Didact Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: var(--recta_size);
