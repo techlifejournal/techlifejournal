@@ -16,7 +16,6 @@ function Sidebar() {
     return (
         <SidebarWrapper>
             <>
-
                 <div className="items-center cursor-pointer hover:opacity-70" >
                     {!sidebar ?
                         <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
@@ -32,7 +31,6 @@ function Sidebar() {
                                     </div>
                                 );
                             })}
-
                             <DropDown />
                         </div>
                         <div className="absolute h-full z-0 w-screen" onClick={showSidebar} >
