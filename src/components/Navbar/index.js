@@ -5,11 +5,13 @@ import MenuIcon from '@material-ui/icons/Menu';
 import PersonIcon from '@material-ui/icons/Person';
 import Sidebar from '../Sidebar';
 import DarkLightBtn from './DarkLightToggle'
+import { useScroll } from '../../Utility/ScrollEvent'
 function Nav() {
+    const scroll = useScroll()
     const [search, setSearch] = useState(false);
     return (
         <section id="navbar" className="w-full fixed  z-10 shadow-lg" >
-            <div className="px-3 h-14 md:h-16 items-center  bg-nav_lt dark:bg-dark navfont  w-full flex  ">
+            <div className={`px-3 h-14 md:h-16 items-center   ${scroll < 50 ? 'bg-transparent' : `bg-nav_lt dark:bg-dark`} navfont  w-full flex  `}>
                 {/* Left part of Navbar   */}
                 <div id="left" className={`flex-1 items-center  md:ml-2 flex gap-2 cursor-pointer`}>
                     <Sidebar />

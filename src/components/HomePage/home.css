@@ -1,0 +1,11 @@
+:root {
+  --gradiant-1: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+  --gradiant-2: linear-gradient(90deg, #d4fc79 0%, #96e6a1 100%);
+  --gradiant-4: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+  --gradiant-5: linear-gradient(90deg, #fccb90 0%, #d57eeb 100%);
+  --gradiant-6: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.gradient {
+  background: var(--gradiant-4);
+}

@@ -1,14 +1,17 @@
 import React from 'react'
-
-import * as FiIcons from 'react-icons/fi';
+import LandingPage from './LandingPage';
+import './home.css'
 function Index() {
+    
+    
     return (
-        <section className = "h-screen flex items-center justify-center" >
-            <div className = "text-3xl md:text-6xl animate-bounce  flex flex-col">
+        <section className="" >
+            <LandingPage />
+            {/* <div className = "text-3xl md:text-6xl animate-bounce  flex flex-col">
                 <span className = "font-bold">techlifejournal</span>
                 <span className = " font-bold flex justify-between"><span>.com </span><FiIcons.FiArrowUpRight/></span>
                
-            </div>
+            </div> */}
         </section>
     )
 }
