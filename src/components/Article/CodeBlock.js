@@ -8,7 +8,7 @@ const CodeBlock = {
     const match = /language-(\w+)/.exec(className || '')
     return !inline && match ? (
       <SyntaxHighlighter
-        style={atomDark}
+        style={dracula}
         language={match[1]}
         PreTag="div" {...props}>
         {String(children).replace(/\n$/, '')}
