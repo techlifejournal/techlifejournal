@@ -1,6 +1,5 @@
 import React from 'react'
 import LandingPage from './LandingPage';
-import './home.css'
 function Index() {
     
     

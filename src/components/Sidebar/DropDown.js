@@ -9,7 +9,7 @@ function SideMenu() {
 
         <>
             <button onClick={() => { setCategoty(!Category) }}
-                className="flex items-center hover:bg-sidehover_lt dark:hover:bg-black px-2 py-3 md:p-4 gap-2">
+                className="flex items-center hover:bg-gray-500 hover:bg-opacity-20 dark:hover:bg-opacity-20 dark:hover:bg-white px-2 py-3 md:p-4 gap-2">
                 {Category ? <><BsFillCaretDownFill />  </> : <><BsFillCaretRightFill /> </>}
                 <span>Category</span>
             </button>

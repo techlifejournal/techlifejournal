@@ -1,9 +1,7 @@
 import Navbar from './components/Navbar'
-import HomePage from './components/HomePage'
 import ContentPage from './components/ContentPage'
-import Article from './components/Article'
+import Home from './components/HomePage'
 import Contexts from './context'
-import { useState } from 'react'
 function App() {
   //edf2fb
 
@@ -12,9 +10,8 @@ function App() {
       <div className={`App`}>
         <div className="  dark:text-white ">
           <Navbar />
-          <HomePage />
+          <Home/>
           <ContentPage />
-          <Article />
         </div>
       </div >
     </Contexts>
