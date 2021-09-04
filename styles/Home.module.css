@@ -1,32 +1,26 @@
-
 #content {
   line-height: normal;
 }
 
-.navfont {
+.navFont {
   font-family: "PT Sans", HelveticaNeue-Light, "Helvetica Neue Light",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.titlefont {
-  font-family: "Copperplate", "Papyrus", "fantasy";
-}
-
 .headingFill {
-  background: linear-gradient(to left, transparent 50%, #abc4ff 50%) right;
-
+  background: linear-gradient(to left, transparent 50%, #84fae6 50%) right;
   background-size: 200%;
   transition: 0.2s ease-out;
 }
 .headingFillDark {
-  background: linear-gradient(to left, transparent 50%, #245abd 50%) right;
+  background: linear-gradient(to left, transparent 50%, #764ba2 50%) right;
 
   background-size: 200%;
   transition: 0.2s ease-out;
 }
 
 .headingFillLeft:hover .headingFill,
-.headingFillLeft:hover .headingFill-dark {
+.headingFillLeft:hover .headingFillDark {
   background-position: left;
 }
 
@@ -42,8 +36,6 @@
   background-color: rgb(79, 70, 229);
   outline: 1px solid rgb(79, 70, 229);
 }
-
-
 
 .gradient {
   background: var(--gradiant-4);

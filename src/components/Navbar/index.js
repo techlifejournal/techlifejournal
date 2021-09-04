@@ -4,13 +4,14 @@ import navs from "./navigations"
 import PersonIcon from '@material-ui/icons/Person';
 import Sidebar from '../Sidebar';
 import DarkLightBtn from './DarkLightToggle'
+import Style from '../../../styles/Home.module.css'
 import { ScrollContext } from '../../context/ScrollContext'
 function Nav() {
     const scroll = useContext(ScrollContext);
     const [search, setSearch] = useState(false);
     return (
         <section id="navbar" className="w-full fixed  z-10 shadow-lg" >
-            <div className={`px-3 h-14 md:h-16 items-center   ${scroll < 50 ? 'bg-transparent' : ` bg-light  dark:bg-dark `} navfont  w-full flex  `}>
+            <div className={`px-3 h-14 md:h-16 items-center   ${scroll < 50 ? 'bg-transparent' : "bg-light  dark:bg-dark "} ${Style.navFont}  w-full flex  `}>
                 {/* Left part of Navbar   */}
                 <div id="left" className={`flex-1 items-center  md:ml-2 flex gap-2 cursor-pointer`}>
                     <Sidebar />
