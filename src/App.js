@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import ContentPage from './components/ContentPage'
 import Home from './components/HomePage'
+import Article from './components/Article'
 import Contexts from './context'
 function App() {
   //edf2fb
@@ -10,8 +11,9 @@ function App() {
       <div className={`App`}>
         <div className="  dark:text-white ">
           <Navbar />
-          <Home/>
+          <Home />
           <ContentPage />
+          <Article/>
         </div>
       </div >
     </Contexts>
