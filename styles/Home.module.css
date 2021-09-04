@@ -38,10 +38,12 @@
 }
 
 .gradient {
-  background: var(--gradiant-4);
   background-size: 100vw;
 }
 .gradientDark {
   background: var(--gradiant-dark);
   background-size: 100vw;
+}
+.blur {
+  backdrop-filter: blur(6px);
 }
