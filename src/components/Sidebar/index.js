@@ -5,10 +5,9 @@ import React, { useState, useContext } from 'react';
 import { SidebarData } from './SidebarData';
 import MenuIcon from '@material-ui/icons/Menu';
 import DropDown from './DropDown'
-import styles from '../../../styles/home.module.css'
+import Style from '../../../styles/home.module.css'
 import { ScrollContext } from '../../context/ScrollContext'
 import { DarkLightContext } from '../../context/darkmodeContext'
-import Style from '../../../styles/Home.module.css'
 function Sidebar() {
     const scroll = useContext(ScrollContext);
     const [dark, setDark] = useContext(DarkLightContext);
@@ -22,7 +21,7 @@ function Sidebar() {
                         <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
                 </div>
 
-                <div className={`sidebar-menu   ${sidebar && 'active'} ${scroll < 50 ? (dark ? styles.gradientDark : styles.gradient) : 'bg-nav_lt dark:bg-dark'}`}>
+                <div className={`sidebar-menu   ${sidebar && 'active'} ${scroll < 50 ? (dark ? Style.gradientDark : Style.gradient) : 'bg-nav_lt dark:bg-dark'}`}>
                     <div className='flex  menu-items w-60 md:w-72 ' >
                         <div className={`flex flex-col w-full z-10 ${Style.navFont}`}>
                             {SidebarData.map((item, index) => {

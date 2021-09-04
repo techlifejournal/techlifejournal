@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css?family=Didact+Gothic");
-
 :root {
   --recta_size: 17px;
   --title_hover_dark: #245abd;
@@ -42,12 +41,4 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: rgb(47, 47, 47);
   border-radius: 10px;
-}
-
-.article > h1 {
-  font-weight: 700;
-}
-.article > h2,
-h3 {
-  font-weight: 600;
 }
