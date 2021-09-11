@@ -46,4 +46,5 @@
 }
 .blur {
   backdrop-filter: blur(6px);
+  backface-visibility: visible;
 }
