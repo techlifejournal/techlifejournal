@@ -1,12 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ContentData } from './ContentData'
-import { BsArrowRightShort } from 'react-icons/bs'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Header from './Header'
 import { DarkLightContext } from '../../context/darkmodeContext'
 import Style from '../../../styles/Home.module.css'
+import axios from 'axios'
+import urls from '../../../backend.config'
 function Index() {
     const [dark, setDark] = useContext(DarkLightContext)
+    useEffect(() => {
+        axios.get(`${urls.base_url}/article/list`)
+            .then(response => console.log(response.data));
+    }, []);
     return (
         <section id="content" className="flex-col m-3 shadow-2xl sm:m-5 md:mx-14 border-1  pb-5 border-gray-500 ">
             <Header />
@@ -39,6 +44,8 @@ function Index() {
         </section>
     )
 }
+
+
 
 export default Index
 
