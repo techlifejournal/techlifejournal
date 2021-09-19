@@ -3,13 +3,17 @@ import { Article1 as markdown } from './example'
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw'
 import CodeBlock from "./codeblock"
+import remarkGfm from 'remark-gfm'
+import remarkFootnotes from 'remark-footnotes'
+import remarkParse from 'remark-parse'
 import Style from '../../../styles/Article.module.css'
-export default function Article() {
+export default function Article({ pageContent }) {
   return (
     <div className={`mx-4 md:mx-16 lg:mx-48  xl:mx-72 dark:text-white ${Style.article}`}>
       <ReactMarkdown
-        children={markdown}
+        children={pageContent}
         rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm, remarkFootnotes, remarkParse]}
         components={CodeBlock}
       />
     </div>

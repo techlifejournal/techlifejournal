@@ -7,6 +7,7 @@ import Style from '../../../styles/Home.module.css'
 import axios from 'axios'
 import urls from '../../../backend.config'
 import getHighlightedText from '../../Utility/TextHighlight'
+import Link from 'next/link'
 function Index() {
     const [dark, setDark] = useContext(DarkLightContext)
     const [ContentData, setContentData] = useState([])
@@ -38,14 +39,16 @@ function Index() {
                                 {
                                     (index > 0) ? (ele.headline.charAt(0).toUpperCase() != ContentData[index - 1].headline.charAt(0).toUpperCase()) ? <h1 className="text-4xl uppercase text-semibold">{ele.headline.charAt(0)}
                                     </h1> : <h1 className="h-10"></h1> : <h1 className="text-4xl uppercase text-semibold">{(/[a-zA-Z]/).test(ele.headline.charAt(0)) && ele.headline.charAt(0)}</h1>}
-                                <a href="#" className="flex items-end gap-1">
-                                    <h2 className={`text-base font-semibold  cursor-pointer 
+                                <Link href={`/article/${ele.headline.replace(/\s/g, "-")}-${ele.id}`} >
+                                    <a className="flex items-end gap-1">
+                                        <h2 className={`text-base font-semibold  cursor-pointer 
                                             ${dark ? Style.headingFillDark : Style.headingFill} dark-theme`}>
-                                        {getHighlightedText(ele.headline, search)}
-                                    </h2>
-                                    <div className=" flex-1 mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
-                                    <FiArrowUpRight style={{ fontSize: "1.5rem" }} />
-                                </a>
+                                            {getHighlightedText(ele.headline, search)}
+                                        </h2>
+                                        <div className=" flex-1 mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
+                                        <FiArrowUpRight style={{ fontSize: "1.5rem" }} />
+                                    </a>
+                                </Link>
                                 <div className="lowercase dark:text-adark">
                                     {
                                         ele.subtopics.map((topic) => {
