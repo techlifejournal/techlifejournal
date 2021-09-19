@@ -19,10 +19,10 @@ function App({ data }) {
 
         <Contexts>
             <div className={`App`}>
-                <div className="  dark:text-white ">
+                <div className=" text-gray-900 dark:text-white ">
                     <Nav />
                     <section id="ArticlePage" className="flex justify-start pt-20 sm:pt-28  " style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
-                        <ArticleNav />
+                        <ArticleNav data={data} />
                         <article className="p-5 flex flex-col  justify-center  max-w-screen-md">
                             <Heading data={data[0]} />
                             <ArticlePage pageContent={data[0].content} />
@@ -34,9 +34,9 @@ function App({ data }) {
 
     );
 }
-const ArticleNav = ({ subtopic }) => {
+const ArticleNav = ({ data }) => {
     return <div className="hidden lg:block w-1/4 shadow-lg">
-        <Disclosure />
+        <Disclosure data={data} />
     </div>
 }
 
