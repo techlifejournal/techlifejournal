@@ -4,6 +4,10 @@ import Nav from "../../src/components/Navbar"
 import axios from 'axios'
 import Contexts from '../../src/context'
 import urls from '../../backend.config'
+import { GoCalendar } from 'react-icons/go'
+import { RiQuillPenLine } from 'react-icons/ri'
+import Disclosure from '../../src/components/Disclosure'
+
 
 function App({ data }) {
     const router = useRouter();
@@ -17,17 +21,10 @@ function App({ data }) {
             <div className={`App`}>
                 <div className="  dark:text-white ">
                     <Nav />
-                    <section className="flex justify-center pt-20 sm:pt-28  overflow-hidden" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+                    <section id="ArticlePage" className="flex justify-start pt-20 sm:pt-28  " style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+                        <ArticleNav />
                         <article className="p-5 flex flex-col  justify-center  max-w-screen-md">
-                            <div className="flex flex-col gap-4 border-b-2 dark:border-opacity-50 mb-4">
-                                <h1 className="text-4xl md:text-6xl font-bold">{data[0].headline}</h1>
-                                <div className="flex justify-between text-lg  mb-2">
-                                    <p className="">swasthik shetty</p>
-                                    <p className="">{data[0].pub_date}</p>
-
-                                </div>
-                            </div>
-
+                            <Heading data={data[0]} />
                             <ArticlePage pageContent={data[0].content} />
                         </article>
                     </section>
@@ -36,6 +33,21 @@ function App({ data }) {
         </Contexts>
 
     );
+}
+const ArticleNav = ({ subtopic }) => {
+    return <div className="hidden lg:block w-1/4 shadow-lg">
+        <Disclosure />
+    </div>
+}
+
+const Heading = ({ data }) => {
+    return <div className="flex flex-col gap-4 border-b-2 dark:border-opacity-50 mb-4">
+        <h1 className="text-4xl md:text-6xl font-bold">{data.headline}</h1>
+        <div className="flex justify-between text-md  mb-2">
+            <p className="flex items-center "><RiQuillPenLine /><a href="/author/id " >swathik shetty</a></p>
+            <p className="flex items-center gap-1"><GoCalendar /><span>{data.pub_date}</span></p>
+        </div>
+    </div>
 }
 
 export const getServerSideProps = async ({ params }) => {
