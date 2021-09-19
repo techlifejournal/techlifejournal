@@ -9,7 +9,7 @@ import remarkParse from 'remark-parse'
 import Style from '../../../styles/Article.module.css'
 export default function Article({ pageContent }) {
   return (
-    <div className={`mx-4 md:mx-16 lg:mx-48  xl:mx-72 dark:text-white ${Style.article}`}>
+    <div className={`flex flex-col gap-5 dark:text-white ${Style.article}`}>
       <ReactMarkdown
         children={pageContent}
         rehypePlugins={[rehypeRaw]}
