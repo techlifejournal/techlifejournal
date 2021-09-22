@@ -73,91 +73,63 @@ export default function SignUp() {
     const classes = useStyles();
 
     return (
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <div className={classes.paper}>
-                <Avatar className={classes.avatar}></Avatar>
-                <Typography component="h1" variant="h5">
-                    Sign up
-                </Typography>
-                <form className={classes.form} noValidate>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
-                                onChange={handleChange}
-                            />
-                        </Grid>
+        <div>
+            <form onSubmit={handleSubmit} className="bg-grey-lighter min-h-screen flex flex-col">
+                <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                    <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                        <h1 className="mb-8 text-3xl text-center">Sign Up</h1>
+                        <input
+                            type="text"
+                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            name="full_name"
 
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="full_name"
-                                label="Full name"
-                                name="full_name"
-                                autoComplete="full_name"
-                                onChange={handleChange}
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="username"
-                                label="Username"
-                                name="username"
-                                autoComplete="username"
-                                onChange={handleChange}
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                name="password"
-                                label="Password"
-                                type="password"
-                                id="password"
-                                autoComplete="current-password"
-                                onChange={handleChange}
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <FormControlLabel
-                                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                                label="I want to receive inspiration, marketing promotions and updates via email."
-                            />
-                        </Grid>
-                    </Grid>
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        className={classes.submit}
-                        onClick={handleSubmit}
-                    >
-                        Sign Up
-                    </Button>
-                    <Grid container justify="flex-end">
-                        <Grid item>
-                            <Link href="#" variant="body2">
-                                Already have an account? Sign in
-                            </Link>
-                        </Grid>
-                    </Grid>
-                </form>
-            </div>
-        </Container>
+                            onChange={handleChange}
+                            placeholder="Full Name" required />
+
+                        <input
+                            type="text"
+                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            name="email"
+
+                            onChange={handleChange}
+                            placeholder="Email" required />
+                        <input
+                            type="text"
+                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            name="username"
+                            onChange={handleChange}
+                            placeholder="Username" required />
+
+                        <input
+                            type="password"
+                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            name="password"
+                            onChange={handleChange}
+                            placeholder="Password" required />
+                        <input
+                            type="password"
+                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            name="confirm_password"
+                            onChange={handleChange}
+                            placeholder="Confirm Password" required />
+
+                        <button
+                            type="submit"
+                            className="w-full text-center py-3 rounded bg-indigo-600 hover:bg-indigo-700 text-white hover:bg-green-dark focus:outline-none my-1"
+
+                        >Create Account</button>
+
+
+                    </div>
+
+                    <div className="text-grey-dark mt-6">
+                        Already have an account?
+                        <a className="no-underline border-b border-blue text-blue-700" href="#/login/">
+                            Log in
+                        </a>.
+                    </div>
+                </div>
+            </form>
+        </div>
     );
 }
