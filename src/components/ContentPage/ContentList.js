@@ -16,7 +16,7 @@ function Index() {
     useEffect(() => {
         setLoading(true)
         const timer = setTimeout(() => {
-            axios.get(`${urls.base_url}/article/list?search=${search}`)
+            axios.get(`${urls.base_url}article/list?search=${search}`)
                 .then(response => {
                     setContentData(response.data)
                     setLoading(false)

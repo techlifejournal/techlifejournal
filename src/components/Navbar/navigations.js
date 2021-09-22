@@ -1,4 +1,4 @@
-export default  [
+export default [
     {
         name: "HOME",
         href: "#"
@@ -13,7 +13,7 @@ export default  [
     },
     {
         name: "NEWS",
-        href: "#"
+        href: "/news"
     },
     {
         name: "COMMUNITY",

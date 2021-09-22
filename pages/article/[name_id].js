@@ -53,7 +53,7 @@ const Heading = ({ data }) => {
 export const getServerSideProps = async ({ params }) => {
 
     const { data } = await axios.get(
-        `${urls.base_url}/article/?id=${params.name_id.slice(-1)}`
+        `${urls.base_url}article/?id=${params.name_id.slice(-1)}`
     );
 
     return {

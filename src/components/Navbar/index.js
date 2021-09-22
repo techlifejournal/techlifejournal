@@ -21,9 +21,9 @@ function Nav() {
                 {/* Navigation   */}
                 <div id="center" className="hidden  md:flex font-semibold text-xs    justify-center">
                     {navs.map((ele, index) => {
-                        return <div className={`   ${index ? "border-black dark:border-white border-l-1 border-opacity-50" : ""} px-5   hover:opacity-50  cursor-pointer `}>
+                        return <a href={ele.href} className={`   ${index ? "border-black dark:border-white border-l-1 border-opacity-50" : ""} px-5   hover:opacity-50  cursor-pointer `}>
                             <span>{ele.name}</span>
-                        </div>
+                        </a>
                     })}
                 </div>
                 {/*  Search Icon and UserIcon */}

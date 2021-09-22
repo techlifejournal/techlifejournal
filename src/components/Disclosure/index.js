@@ -10,7 +10,7 @@ export default function Index({ data }) {
                     <Disclosure>
                         {({ open }) => (
                             <>
-                                <Disclosure.Button className="flex justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-opacity-10 hover:border-opacity-10 text-left rounded-md border-2 dark:border-white dark:border-opacity-20 ">
+                                <Disclosure.Button className="flex justify-between w-full px-4 py-2 font-semibold hover:bg-gray-200 dark:hover:bg-opacity-10 hover:border-opacity-10 text-left rounded-md border-2 dark:border-white dark:border-opacity-20 ">
                                     <span>{ele.headline}</span>
                                     <IoIosArrowForward
                                         className={`${open ? 'transform rotate-90' : ''
