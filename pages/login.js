@@ -39,6 +39,7 @@ function Login() {
                 history.push('/');
             });
     };
+
     return (
         <div>
             <div className="bg-grey-lighter min-h-screen flex flex-col">

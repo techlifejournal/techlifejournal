@@ -1,6 +1,5 @@
 import axios from 'axios';
 import urls from '../../backend.config'
-
 const baseURL = urls.base_url
 
 import React, {
