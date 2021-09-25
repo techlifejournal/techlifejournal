@@ -3,22 +3,15 @@ import url from '../../../backend.config'
 import axios from 'axios';
 export default async (req, res) => {
     if (req.method === "POST") {
-        const { username, password } = req.body;
-        const body = JSON.stringify({
-            username, password
-        })
+        console.log(req.body)
+        const { email, password } = req.body;
         try {
-            let apiRes = await axios({
-                url: `${url.base_url}token/`,
-                method: 'POST',
-                timeout: 8000,
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: body
+            const apiRes = await axios.post(`${url.base_url}token/`, {
+                email: email,
+                password: password,
             })
-            const data = await apiRes.json()
+            const data = await apiRes.data
+            console.log(data)
             if (apiRes.status == 200) {
                 res.setHeader('Set-Cookie', [
                     cookie.serialize('access', data.access, {
@@ -44,7 +37,7 @@ export default async (req, res) => {
             }
         } catch (err) {
             return res.status(500).json({
-                error: "Something went wrong🐛"
+                error: err
             })
 
         }

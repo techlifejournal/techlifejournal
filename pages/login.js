@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import urls from '../backend.config'
-import axiosInstance from '../src/Axios';
 import { useRouter } from 'next/router'
 //MaterialUI
 
@@ -25,19 +23,13 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-
-        axiosInstance
-            .post(`token/`, {
-                email: formData.email,
-                password: formData.password,
+        axios.post('http://127.0.0.1:8000/api/token/', {
+            email: formData.email,
+            password: formData.password,
+        })
+            .then(res => {
+                console.log(res.data)
             })
-            .then((res) => {
-                localStorage.setItem('access_token', res.data.access);
-                localStorage.setItem('refresh_token', res.data.refresh);
-                axiosInstance.defaults.headers['Authorization'] =
-                    'JWT ' + localStorage.getItem('access_token');
-                history.push('/');
-            });
     };
 
     return (
