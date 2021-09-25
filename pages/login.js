@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 //MaterialUI
 
 
@@ -23,13 +23,12 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        axios.post('http://127.0.0.1:8000/api/token/', {
+        const body = {
             email: formData.email,
-            password: formData.password,
-        })
-            .then(res => {
-                console.log(res.data)
-            })
+            password: formData.password
+        }
+        const res = axios.post('/api/account/login', body)
+
     };
 
     return (
