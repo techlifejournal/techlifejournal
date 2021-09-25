@@ -20,15 +20,18 @@ function Login() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
         const body = {
             email: formData.email,
             password: formData.password
         }
-        const res = axios.post('/api/account/login', body)
-
+        const res = await axios.post('/api/account/login', body)
+        console.log(res)
+        if (res.status == 200) {
+            history.push('/profile')
+            console.log("Hiii")
+        }
     };
 
     return (
