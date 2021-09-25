@@ -6,9 +6,12 @@ import Sidebar from '../Sidebar';
 import DarkLightBtn from './DarkLightToggle'
 import Style from '../../../styles/Home.module.css'
 import { ScrollContext } from '../../context/ScrollContext'
+import { AuthContext } from '../../context/authContext'
+import Link from 'next/link'
 function Nav() {
     const scroll = useContext(ScrollContext);
     const [search, setSearch] = useState(false);
+    const { isAuthenticated, isLoading, setAuth } = useContext(AuthContext)
     return (
         <section id="navbar" className="w-full fixed  z-10 shadow-lg" >
             <div className={`px-3 h-14 md:h-16 items-center   ${scroll < 50 ? 'bg-transparent' : "bg-light  dark:bg-dark "} ${Style.navFont}  w-full flex  `}>
@@ -32,8 +35,10 @@ function Nav() {
                         <div className="  cursor-pointer"> <div className="pl-2 rounded-md flex items-center gap-1 border-1 border-gray-300 dark:border-gray-500"> <div onClick={() => { setSearch(false) }}><SearchIcon /></div>
                             <input className="focus:outline-none  p-1 bg-transparent w-36  sm:w-38 md:w-full" type="text" placeholder="Search.."></input>
                         </div></div>}
-
-                    <div className=" hover:opacity-70 cursor-pointer hidden sm:block"> <PersonIcon /></div>
+                    {isAuthenticated ?
+                        <div className="hover:opacity-70 cursor-pointer hidden sm:block"><Link href="/user" ><PersonIcon /></Link></div> :
+                        <Link href="/login" ><a className="p-2 bg-blur">Login</a></Link>
+                    }
                     <DarkLightBtn />
                 </div>
             </div>

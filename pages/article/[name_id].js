@@ -1,13 +1,10 @@
 import { useRouter } from 'next/router'
 import ArticlePage from "../../src/components/Article"
-import Nav from "../../src/components/Navbar"
 import axios from 'axios'
-import Contexts from '../../src/context'
 import urls from '../../backend.config'
 import { GoCalendar } from 'react-icons/go'
 import { RiQuillPenLine } from 'react-icons/ri'
 import Disclosure from '../../src/components/Disclosure'
-
 
 function App({ data }) {
     const router = useRouter();
@@ -16,22 +13,13 @@ function App({ data }) {
         return <div>Loading...</div>;
     }
     return (
-
-        <Contexts>
-            <div className={`App`}>
-                <div className=" text-gray-900 dark:text-white ">
-                    <Nav />
-                    <section id="ArticlePage" className="flex justify-start pt-20 sm:pt-28  " style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
-                        <ArticleNav data={data} />
-                        <article className="p-5 flex flex-col  justify-center  max-w-screen-md">
-                            <Heading data={data[0]} />
-                            <ArticlePage pageContent={data[0].content} />
-                        </article>
-                    </section>
-                </div>
-            </div >
-        </Contexts>
-
+        <section id="ArticlePage" className="flex justify-start pt-20 sm:pt-28  " style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+            <ArticleNav data={data} />
+            <article className="p-5 flex flex-col  justify-center  max-w-screen-md">
+                <Heading data={data[0]} />
+                <ArticlePage pageContent={data[0].content} />
+            </article>
+        </section>
     );
 }
 const ArticleNav = ({ data }) => {

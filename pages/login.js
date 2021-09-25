@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import router, { useRouter } from 'next/router'
-//MaterialUI
-
-
+import Link from 'next/link';
+import { AuthContext, useIsAuthenticated } from '../src/context/authContext';
 function Login() {
     const history = useRouter();
     const initialFormData = Object.freeze({
@@ -11,6 +10,7 @@ function Login() {
         password: '',
     });
 
+    const isAuthenticated = useIsAuthenticated()
     const [formData, updateFormData] = useState(initialFormData);
 
     const handleChange = (e) => {
@@ -19,7 +19,9 @@ function Login() {
             [e.target.name]: e.target.value.trim(),
         });
     };
-
+    useEffect(() => {
+        isAuthenticated && history.push('/user')
+    }, [isAuthenticated])
     const handleSubmit = async (e) => {
         e.preventDefault();
         const body = {
@@ -27,10 +29,8 @@ function Login() {
             password: formData.password
         }
         const res = await axios.post('/api/account/login', body)
-        console.log(res)
         if (res.status == 200) {
-            history.push('/profile')
-            console.log("Hiii")
+            history.push('/user')
         }
     };
 
@@ -83,9 +83,11 @@ function Login() {
                     </div>
                     <div className="text-grey-dark mt-6 cursor-pointer">
                         Don't have an account?
-                        <a href="/signup" className="ml-1 no-underline border-b border-blue  text-blue-700 ">
-                            SignUp
-                        </a>.
+                        <Link href="/register">
+                            <a className="ml-1 no-underline border-b border-blue  text-blue-700 ">
+                                SignUp
+                            </a>
+                        </Link>.
                     </div>
 
 

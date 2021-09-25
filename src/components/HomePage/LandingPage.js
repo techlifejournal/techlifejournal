@@ -26,6 +26,8 @@ function LandingPage() {
                 <div className="">
                     <img className='h-52  lg:h-96 ' src='/Devfocus.svg' />
                 </div>
+                <div>
+                </div>
             </div>
             {curve(dark)}
         </section>

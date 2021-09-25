@@ -1,6 +1,6 @@
 import cookie from 'cookie'
 import url from '../../../backend.config'
-import axios from 'axios';
+import axios from 'axios'
 export default async (req, res) => {
     if (req.method === "POST") {
         console.log(req.body)
