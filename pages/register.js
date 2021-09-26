@@ -1,40 +1,12 @@
 import axios from 'axios';
 import urls from '../backend.config'
 import { useRouter } from 'next/router'
-import { useState } from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-
-const useStyles = makeStyles((theme) => ({
-    paper: {
-        marginTop: theme.spacing(8),
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-        width: '100%', // Fix IE 11 issue.
-        marginTop: theme.spacing(3),
-    },
-    submit: {
-        margin: theme.spacing(3, 0, 2),
-    },
-}));
-
+import { useState, useRef } from 'react';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import Link from 'next/link';
 export default function SignUp() {
+    const errorDisplay = useRef(null)
+    const [Loading, setLoading] = useState(false);
     const history = useRouter();
     const initialFormData = Object.freeze({
         email: '',
@@ -53,30 +25,44 @@ export default function SignUp() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true)
         console.log(formData);
-        axios
-            .post(`${urls.base_url}user/create/`, {
+        if (formData.password != formData.confirm_password) {
+            errorDisplay.current.value = "Password does not match"
+            setLoading(false);
+            return
+        }
+
+        try {
+            const res = await axios.post(`${urls.base_url}user/create/`, {
                 email: formData.email,
                 user_name: formData.username,
                 password: formData.password,
                 full_name: formData.full_name
             })
-            .then((res) => {
+            if (res.status === 201) {
                 history.push('/login');
                 console.log(res);
                 console.log(res.data);
-            });
+            } else {
+                console.log(res)
+            }
+        }
+        catch (err) {
+            console.log(err)
+            errorDisplay.current.value = "Email or Username already taken! "
+        }
+        setLoading(false);
     };
 
-    const classes = useStyles();
 
     return (
         <div>
             <form onSubmit={handleSubmit} className="bg-grey-lighter min-h-screen flex flex-col">
                 <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                    <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                    <div className=" px-6 py-8 rounded shadow-md  w-full">
                         <h1 className="mb-8 text-3xl text-center">Sign Up</h1>
                         <input
                             type="text"
@@ -87,7 +73,7 @@ export default function SignUp() {
                             placeholder="Full Name" required />
 
                         <input
-                            type="text"
+                            type="email"
                             className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="email"
 
@@ -112,21 +98,24 @@ export default function SignUp() {
                             name="confirm_password"
                             onChange={handleChange}
                             placeholder="Confirm Password" required />
+                        <div className="text-center"><a className="text-red-500 " ref={errorDisplay}></a></div>
 
                         <button
                             type="submit"
-                            className="w-full text-center py-3 rounded bg-indigo-600 hover:bg-indigo-700 text-white hover:bg-green-dark focus:outline-none my-1"
-
-                        >Create Account</button>
-
+                            className="w-full flex justify-center items-center gap-2 text-center py-3 rounded bg-indigo-600 hover:bg-indigo-700 text-white hover:bg-green-dark focus:outline-none my-1"
+                            disabled={Loading ? true : false}
+                        >
+                            {Loading ? <><AiOutlineLoading3Quarters className="animate-spin" /><span>Signing In</span></> : "Create account"}</button>
 
                     </div>
 
                     <div className="text-grey-dark mt-6">
                         Already have an account?
-                        <a className="no-underline border-b border-blue text-blue-700" href="#/login/">
-                            Log in
-                        </a>.
+                        <Link href="/login">
+                            <a className="no-underline border-b border-blue text-blue-700">
+                                Log in.
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </form>

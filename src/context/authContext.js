@@ -8,25 +8,33 @@ export const AuthContext = createContext({
 export default function Auth(props) {
     const [isAuthenticated, setAuthenticated] = useState(false);
     const [isLoading, setLoading] = useState(true);
+    const [userState, setUserState] = useState(true);
     const [userData, setUserData] = useState({})
     useEffect(() => {
         const initializeAuth = async () => {
+            setLoading(true);
             const response = await fetch('/api/account/user');
             if (response.status === 200) {
                 setAuthenticated(true);
                 const { data } = await response.json()
                 setUserData(data[0])
             }
+            else {
+                setAuthenticated(false);
+                setUserData({});
+            }
             setLoading(false);
         };
         initializeAuth();
-    }, [])
+    }, [userState])
     return (
         <AuthContext.Provider value={{
             isAuthenticated,
             isLoading,
             setAuthenticated,
-            userData
+            userData,
+            userState,
+            setUserState
         }}>
             {props.children}
         </AuthContext.Provider>

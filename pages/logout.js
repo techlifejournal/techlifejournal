@@ -1,8 +1,10 @@
-import React from 'react'
-import { useRouter } from 'next/router';
-
+import { useContext } from 'react';
+import { AuthContext } from '../src/context/authContext';
+import { useRouter } from 'next/router'
 function logout() {
+
     const history = useRouter()
+    const { userState, setUserState } = useContext(AuthContext)
     const logout = async () => {
 
         const res = await fetch('/api/account/logout', {
@@ -12,6 +14,7 @@ function logout() {
             }
         });
         if (res.status === 200) {
+            setUserState(!userState)
             history.push('/login')
         }
     }

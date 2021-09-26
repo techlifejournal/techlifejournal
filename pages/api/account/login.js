@@ -36,8 +36,8 @@ export default async (req, res) => {
                 return res.status(apiRes.status).json({ error: "Authentication failed" })
             }
         } catch (err) {
-            return res.status(500).json({
-                error: err
+            return res.status(202).json({
+                error: "Invalid Email or Password"
             })
 
         }
