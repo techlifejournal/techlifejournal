@@ -20,7 +20,7 @@ function Login() {
     };
     useEffect(() => {
         isAuthenticated && !isLoading && history.push('/user')
-    }, [isAuthenticated])
+    }, [isLoading])
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)
