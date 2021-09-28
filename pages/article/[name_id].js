@@ -28,7 +28,7 @@ const ArticleNav = ({ data }) => {
     </div>
 }
 
-const Heading = ({ data }) => {
+export const Heading = ({ data }) => {
     return <div className="flex flex-col gap-4 border-b-2 dark:border-opacity-50 mb-4">
         <h1 className="text-4xl md:text-6xl font-bold">{data.headline}</h1>
         <div className="flex justify-between text-md  mb-2">
