@@ -9,9 +9,7 @@ function New() {
     })
     const date = new Date()
     const [preview, setPreview] = useState(false)
-    const handelSubmit = () => {
-        console.log("submiting")
-    }
+
     return (
         <section>
             <div class=" py-20 px-4 md:py-28  max-w-4xl mx-auto min-h-screen">
@@ -50,7 +48,7 @@ function New() {
                     </div>
                     <div className="flex justify-between bg-gray-50 dark:bg-opacity-5 border border-t-0 border-gray-300  rounded-b-md text-white">
                         <div className=" flex gap-2 w-full justify-start p-3">
-                            <button onClick={handelSubmit} className="bg-blue-600 hover:bg-blue-500 px-3 py-2 rounded-md" >Publish</button>
+                            <button className="bg-blue-600 hover:bg-blue-500 px-3 py-2 rounded-md" >Publish</button>
                             <button className="text-black bg-gray-300  hover:bg-gray-200 px-3 py-2 rounded-md">Save Draft</button>
                         </div>
                         <button className="bg-red-600 hover:bg-red-500  m-3 px-2  text-2xl rounded-md" ><MdDelete /></button>
