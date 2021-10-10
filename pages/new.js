@@ -77,13 +77,3 @@ function New() {
 
 export default New
 
-
-// const Heading = ({ data }) => {
-//     return <div className="flex flex-col gap-4 border-b-2 dark:border-opacity-50 mb-4">
-//         <h1 className="text-4xl md:text-6xl font-bold">{data.headline}</h1>
-//         <div className="flex justify-between text-md  mb-2">
-//             <p className="flex items-center "><RiQuillPenLine /><a href="/author/id " >swathik shetty</a></p>
-//             <p className="flex items-center gap-1"><GoCalendar /><span>10-9-21</span></p>
-//         </div>
-//     </div>
-// }
