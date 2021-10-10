@@ -1,15 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import Article from '../src/components/Article/ArticlePage'
 import { MdDelete } from 'react-icons/md'
 import { Heading } from './article/[name_id]'
+import { AuthContext } from '../src/context/authContext'
 function New() {
     const [content, setContent] = useState({
-        title: "",
-        body: ""
+        headline: "",
+        content: ""
     })
+    const { userData } = useContext(AuthContext)
     const date = new Date()
     const [preview, setPreview] = useState(false)
+    useEffect(() => {
+        localStorage.getItem('post_content') && setContent(JSON.parse(localStorage.getItem('post_content')))
+    }, [])
+    const saveDraft = () => {
+        localStorage.setItem('post_content', JSON.stringify(content))
+        window.alert("saved✔️")
+    }
+    const handelSubmit = () => {
 
+    }
     return (
         <section>
             <div class=" py-20 px-4 md:py-28  max-w-4xl mx-auto min-h-screen">
@@ -27,31 +38,36 @@ function New() {
                         <div className="p-5 border-1 ">
                             {!preview ?
                                 <div className="">
-                                    <input className="bg-transparent w-full   text-4xl  focus:outline-none py-4" value={content.title} onChange={(e) => { setContent({ ...content, title: e.target.value }) }} placeholder="Title Here..." />
+                                    <input className="bg-transparent w-full   text-4xl  focus:outline-none py-4" value={content.headline} onChange={(e) => { setContent({ ...content, headline: e.target.value }) }} placeholder="Title Here..." />
                                     <textarea
                                         id="id"
                                         x-ref="input"
                                         name="content"
                                         className="h-56 lg:h-96 bg-transparent w-full focus:outline-none"
                                         placeholder="Write your article here..."
-                                        value={content.body}
-                                        onChange={(e) => { setContent({ ...content, body: e.target.value }) }}
+                                        value={content.content}
+                                        onChange={(e) => { setContent({ ...content, content: e.target.value }) }}
                                     ></textarea>
                                 </div> :
                                 <div id="preview"
                                     className="w-full "
                                 >
-                                    <Heading data={{ headline: content.title }} />
-                                    <Article pageContent={content.body} />
+                                    <Heading data={{ headline: content.headline }} authors={[userData]} />
+                                    <Article pageContent={content.content} />
                                 </div>}
                         </div>
                     </div>
                     <div className="flex justify-between bg-gray-50 dark:bg-opacity-5 border border-t-0 border-gray-300  rounded-b-md text-white">
                         <div className=" flex gap-2 w-full justify-start p-3">
-                            <button className="bg-blue-600 hover:bg-blue-500 px-3 py-2 rounded-md" >Publish</button>
-                            <button className="text-black bg-gray-300  hover:bg-gray-200 px-3 py-2 rounded-md">Save Draft</button>
+                            <button className="bg-blue-600 hover:bg-blue-500 px-3 py-2 rounded-md" onClick={handelSubmit}>Publish</button>
+                            <button className="text-black bg-gray-300  hover:bg-gray-200 px-3 py-2 rounded-md" onClick={saveDraft}>Save Draft</button>
                         </div>
-                        <button className="bg-red-600 hover:bg-red-500  m-3 px-2  text-2xl rounded-md" ><MdDelete /></button>
+                        <button className="bg-red-600 hover:bg-red-500  m-3 px-2  text-2xl rounded-md" onClick={() => {
+                            setContent({
+                                headline: "",
+                                content: ""
+                            })
+                        }} ><MdDelete /></button>
 
                     </div>
                 </div>
