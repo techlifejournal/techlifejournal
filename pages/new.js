@@ -3,10 +3,13 @@ import Article from '../src/components/Article/ArticlePage'
 import { MdDelete } from 'react-icons/md'
 import { Heading } from './article/[name_id]'
 import { AuthContext } from '../src/context/authContext'
+import axios from 'axios'
+import urls from '../backend.config'
 function New() {
     const [content, setContent] = useState({
         headline: "",
-        content: ""
+        content: "",
+        Tags: []
     })
     const { userData } = useContext(AuthContext)
     const date = new Date()
@@ -18,8 +21,8 @@ function New() {
         localStorage.setItem('post_content', JSON.stringify(content))
         window.alert("saved✔️")
     }
-    const handelSubmit = () => {
-
+    const handelSubmit = async () => {
+        res = await axios.post('/api/article/send', content)
     }
     return (
         <section>
@@ -65,7 +68,8 @@ function New() {
                         <button className="bg-red-600 hover:bg-red-500  m-3 px-2  text-2xl rounded-md" onClick={() => {
                             setContent({
                                 headline: "",
-                                content: ""
+                                content: "",
+                                Tags: []
                             })
                         }} ><MdDelete /></button>
 
