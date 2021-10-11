@@ -24,9 +24,9 @@ function Nav() {
                 {/* Navigation   */}
                 <div id="center" className="hidden  md:flex font-semibold text-xs    justify-center">
                     {navs.map((ele, index) => {
-                        return <a href={ele.href} className={`   ${index ? "border-black dark:border-white border-l-1 border-opacity-50" : ""} px-5   hover:opacity-50  cursor-pointer `}>
-                            <span>{ele.name}</span>
-                        </a>
+
+                        return <Link href={ele.href} ><a className={`   ${index ? "border-black dark:border-white border-l-1 border-opacity-50" : ""} px-5   hover:opacity-50  cursor-pointer `}> <span>{ele.name}</span>
+                        </a></Link>
                     })}
                 </div>
                 {/*  Search Icon and UserIcon */}
@@ -36,8 +36,8 @@ function Nav() {
                             <input className="focus:outline-none  p-1 bg-transparent w-36  sm:w-38 md:w-full" type="text" placeholder="Search.."></input>
                         </div></div>}
                     {isAuthenticated ?
-                        <div className="hover:opacity-70 cursor-pointer hidden sm:block"><Link href="/user" ><PersonIcon /></Link></div> :
-                        <Link href="/login" ><a className="p-2 bg-blur">Login</a></Link>
+                        <div className="hover:opacity-70 cursor-pointer  sm:block"><Link href="/user" ><PersonIcon /></Link></div> :
+                        <Link href="/login" ><a className="p-2 font-semibold hover:opacity-70">Login</a></Link>
                     }
                     <DarkLightBtn />
                 </div>

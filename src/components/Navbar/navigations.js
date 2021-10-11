@@ -1,15 +1,15 @@
 export default [
     {
         name: "HOME",
-        href: "#"
+        href: "/"
     },
     {
         name: "LEARN",
-        href: "#"
+        href: "/learn"
     },
     {
         name: "RESOURCES",
-        href: "#"
+        href: "/resource"
     },
     {
         name: "NEWS",
@@ -17,6 +17,6 @@ export default [
     },
     {
         name: "COMMUNITY",
-        href: "#"
+        href: "/community"
     },
 ]

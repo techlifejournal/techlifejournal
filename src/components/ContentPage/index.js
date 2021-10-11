@@ -5,7 +5,7 @@ function Index() {
     return (
         <section>
             <div className="mt-10 md:mt-24 text-center ">
-                <h1 className="" > <UndrLine >Choose what to learn</UndrLine></h1>
+                <h1 className="" > <UndrLine >choose a article</UndrLine></h1>
             </div>
             <ContentList />
         </section>
