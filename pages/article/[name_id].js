@@ -24,7 +24,7 @@ function App({ data }) {
     return (
         <section id="ArticlePage" className="flex justify-start pt-20 sm:pt-28  " style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
             <ArticleNav data={data} />
-            <article className="p-5 flex flex-col  justify-center  max-w-screen-md">
+            <article className="p-5 flex flex-col  justify-center w-full max-w-4xl">
                 <Heading data={data[0]} authors={Authors} />
                 <ArticlePage pageContent={data[0].content} />
             </article>

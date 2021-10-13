@@ -17,14 +17,14 @@ export default async (req, res) => {
                     cookie.serialize('access', data.access, {
                         httpOnly: true,
                         secure: false,
-                        maxAge: 60 * 30,
+                        maxAge: 60 * 60 * 24,
                         sameSite: 'strict',
                         path: '/api/',
                     }),
                     cookie.serialize('refresh', data.refresh, {
                         httpOnly: true,
                         secure: false,
-                        maxAge: 60 * 60 * 24,
+                        maxAge: 60 * 60 * 24 * 3,
                         sameSite: 'strict',
                         path: '/api/',
                     })
