@@ -66,7 +66,7 @@ export default function SignUp() {
                         <h1 className="mb-8 text-3xl text-center">Sign Up</h1>
                         <input
                             type="text"
-                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            className="dark:text-black block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="full_name"
 
                             onChange={handleChange}
@@ -74,27 +74,27 @@ export default function SignUp() {
 
                         <input
                             type="email"
-                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            className="dark:text-black block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="email"
 
                             onChange={handleChange}
                             placeholder="Email" required />
                         <input
                             type="text"
-                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            className="dark:text-black block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="username"
                             onChange={handleChange}
                             placeholder="Username" required />
 
                         <input
                             type="password"
-                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            className="dark:text-black block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="password"
                             onChange={handleChange}
                             placeholder="Password" required />
                         <input
                             type="password"
-                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            className="dark:text-black block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="confirm_password"
                             onChange={handleChange}
                             placeholder="Confirm Password" required />

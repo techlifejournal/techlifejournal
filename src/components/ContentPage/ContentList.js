@@ -21,22 +21,18 @@ function Index() {
                     setContentData(response.data)
                     setLoading(false)
                 });
-
         }, 500);
-
         return () => clearTimeout(timer);
     }, [search]);
     return (
-        <section id="content" className="flex-col m-3 shadow-2xl sm:m-5 md:mx-14 border-1  pb-5 border-gray-500 ">
+        <section id="content" className="flex-col m-3 shadow-2xl sm:m-5 md:mx-14  border-gray-500 ">
             <Header setSearch={setSearch} />
-
-
-            {loading ? <div className="flex justify-center text-4xl m-5"><span className="animate-spin"><VscLoading /></span></div> : (ContentData.length != 0 ?
-                <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{
+            {loading ? <div className="flex justify-center text-4xl py-5 m-5"><span className="animate-spin"><VscLoading /></span></div> : (ContentData.length != 0 ?
+                <div className="grid grid-cols-1 border-r-1 border-b-1  border-gray-500  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{
                     ContentData.map((ele, index) => {
                         return <>
                             <Link href={`/article/${ele.headline.replace(/\s/g, "-")}-${ele.id}`} >
-                                <div className={`px-2 border-r-1 border-gray-500 cursor-pointer ${Style.headingFillLeft}  `}>
+                                <div className={`p-2 pb-4 border-l-1 border-gray-500 cursor-pointer  ${Style.headingFillLeft}  `}>
                                     {
                                         (index > 0) ? (ele.headline.charAt(0).toUpperCase() != ContentData[index - 1].headline.charAt(0).toUpperCase()) ? <h1 className="text-4xl uppercase text-semibold">{ele.headline.charAt(0)}
                                         </h1> : <h1 className="h-10"></h1> : <h1 className="text-4xl uppercase text-semibold">{(/[a-zA-Z]/).test(ele.headline.charAt(0)) && ele.headline.charAt(0)}</h1>}
@@ -60,9 +56,8 @@ function Index() {
                             </Link>
                         </>
                     })
-
                 }</div>
-                : <div className="text-2xl m-5 font-semibold text-center"> No result found </div>)
+                : <div className="text-2xl m-5 font-semibold py-10 text-center"> No result found </div>)
             }
 
         </section>

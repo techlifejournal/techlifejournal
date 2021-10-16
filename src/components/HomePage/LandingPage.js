@@ -16,7 +16,7 @@ function LandingPage() {
                         <span className=" font-bold flex justify-between"><span>.com </span><FiArrowUpRight /></span>
                     </div>
                     <div>
-                        <a className="bg-white dark:bg-black  font-bold py-2 px-4 rounded-full hover:bg-gray-100 dark:hover:bg-blue-900">Start Learning</a>
+                        <a className="bg-white dark:bg-black  font-bold py-2 px-4 rounded-full hover:bg-gray-100 dark:hover:bg-blue-900">Start Exploring</a>
                     </div>
                 </div>
                 <div className="">

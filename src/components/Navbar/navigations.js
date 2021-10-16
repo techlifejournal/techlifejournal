@@ -4,12 +4,12 @@ export default [
         href: "/"
     },
     {
-        name: "LEARN",
-        href: "/learn"
+        name: "RESOURCES",
+        href: "/resources"
     },
     {
-        name: "RESOURCES",
-        href: "/resource"
+        name: "PODCASTS",
+        href: "/podcasts"
     },
     {
         name: "NEWS",

@@ -50,14 +50,14 @@ function Login() {
 
                         <input
                             type="email"
-                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            className="block border dark:text-black  focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="email"
                             onChange={handleChange}
                             placeholder="Email" required />
 
                         <input
                             type="password"
-                            className="block border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
+                            className="block dark:text-black border focus:outline-none border-gray-light focus:border-green-500 w-full p-3 rounded mb-4"
                             name="password"
                             onChange={handleChange}
                             placeholder="Password" required />

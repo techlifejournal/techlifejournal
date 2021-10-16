@@ -2,7 +2,6 @@
 import urls from '../../backend.config'
 import { GoCalendar } from 'react-icons/go'
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 export default function User({ userData, articles, error }) {
     console.log(userData)
@@ -18,9 +17,7 @@ export default function User({ userData, articles, error }) {
                         <a className="hover:text-blue-500" >{userData[0].about}</a>
                         <a className="text-xl">0 Followers</a>
                     </div>
-
                 </div>
-
                 {articles.length != 0 ? articles.map((article) => <Link href={`/article/${article.headline.replace(/\s/g, "-")}-${article.id}`}><div className="w-full p-5 bg-gray-100 dark:bg-opacity-10 cursor-pointer break-words">
                     <div className="flex flex-wrap justify-between items-center">
                         <h1 className="font-semibold">{article.headline}</h1>
@@ -32,8 +29,6 @@ export default function User({ userData, articles, error }) {
         </section>
     );
 }
-
-
 
 export const getServerSideProps = async ({ params }) => {
     try {
