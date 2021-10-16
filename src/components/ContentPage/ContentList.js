@@ -35,11 +35,11 @@ function Index() {
                 <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{
                     ContentData.map((ele, index) => {
                         return <>
-                            <div className={`px-2 border-r-1 border-gray-500 ${Style.headingFillLeft}  `}>
-                                {
-                                    (index > 0) ? (ele.headline.charAt(0).toUpperCase() != ContentData[index - 1].headline.charAt(0).toUpperCase()) ? <h1 className="text-4xl uppercase text-semibold">{ele.headline.charAt(0)}
-                                    </h1> : <h1 className="h-10"></h1> : <h1 className="text-4xl uppercase text-semibold">{(/[a-zA-Z]/).test(ele.headline.charAt(0)) && ele.headline.charAt(0)}</h1>}
-                                <Link href={`/article/${ele.headline.replace(/\s/g, "-")}-${ele.id}`} >
+                            <Link href={`/article/${ele.headline.replace(/\s/g, "-")}-${ele.id}`} >
+                                <div className={`px-2 border-r-1 border-gray-500 cursor-pointer ${Style.headingFillLeft}  `}>
+                                    {
+                                        (index > 0) ? (ele.headline.charAt(0).toUpperCase() != ContentData[index - 1].headline.charAt(0).toUpperCase()) ? <h1 className="text-4xl uppercase text-semibold">{ele.headline.charAt(0)}
+                                        </h1> : <h1 className="h-10"></h1> : <h1 className="text-4xl uppercase text-semibold">{(/[a-zA-Z]/).test(ele.headline.charAt(0)) && ele.headline.charAt(0)}</h1>}
                                     <a className="flex items-end gap-1">
                                         <h2 className={`text-base font-semibold  cursor-pointer 
                                             ${dark ? Style.headingFillDark : Style.headingFill} dark-theme`}>
@@ -48,15 +48,16 @@ function Index() {
                                         <div className=" flex-1 mb-1 border-b-1 border-black dark:border-white border-dashed "></div>
                                         <FiArrowUpRight style={{ fontSize: "1.5rem" }} />
                                     </a>
-                                </Link>
-                                <div className="lowercase dark:text-adark">
-                                    {
-                                        ele.subtopics.map((topic) => {
-                                            return <a href={topic} > {getHighlightedText(topic, search)},</a>
-                                        })
-                                    }
+                                    <div className="lowercase dark:text-adark">
+                                        {
+                                            ele.subtopics.map((topic) => {
+                                                return <a > {getHighlightedText(topic, search)},</a>
+                                            })
+                                        }
+                                    </div>
                                 </div>
-                            </div>
+
+                            </Link>
                         </>
                     })
 

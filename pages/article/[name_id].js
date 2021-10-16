@@ -7,17 +7,19 @@ import { RiQuillPenLine } from 'react-icons/ri'
 import Disclosure from '../../src/components/Disclosure'
 import { useEffect, useState } from 'react'
 
-function App({ data }) {
+function App({ data, error }) {
     const [Authors, setAuthors] = useState([])
+    const router = useRouter()
+
     async function fetch_author() {
         const apiRes = await fetch(`/api/authors/${data[0].authors.toString()}`)
         const res = await apiRes.json()
         setAuthors(res.data)
     }
     useEffect(() => {
+        (error == 500 || data.length == 0) && router.push('/')
         fetch_author()
     }, [])
-    const router = useRouter();
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
@@ -48,17 +50,26 @@ export const Heading = ({ data, authors }) => {
 }
 
 export const getServerSideProps = async ({ params }) => {
+    try {
+        const { data } = await axios.get(
+            `${urls.base_url}article/?id=${params.name_id.slice(-1)}`
+        );
 
-    const { data } = await axios.get(
-        `${urls.base_url}article/?id=${params.name_id.slice(-1)}`
-    );
+        return {
+            props: {
+                data: data,
 
-    return {
-        props: {
-            data: data,
-
-        },
-    };
+            },
+        };
+    }
+    catch {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        }
+    }
 };
 
 
