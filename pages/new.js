@@ -22,16 +22,13 @@ function New() {
         window.alert("saved✔️")
     }
     const handelSubmit = async () => {
-        res = await axios.post('/api/article/send', content)
+        const res = await axios.post('/api/article/send', content)
     }
     return (
         <section>
-            <div class=" py-20 px-4 md:py-28  max-w-4xl mx-auto min-h-screen">
-
-
-
+            <div className=" py-20 px-4 md:py-28  max-w-4xl mx-auto min-h-screen">
                 <div className=" shadow-lg  flex flex-col ">
-                    <div class="bg-gray-50 dark:bg-opacity-10 border border-b-0 border-gray-300 top-0 left-0 right-0 block rounded-t-md">
+                    <div className="bg-gray-50 dark:bg-opacity-10 border border-b-0 border-gray-300 top-0 left-0 right-0 block rounded-t-md">
                         <button onClick={() => { setPreview(false) }} type="button" className={`${!preview && "border-b-4"}  px-4  border-gray-300 inline-block  font-semibold border-r-1 py-3  hover:text-gray-400`} >
                             Write</button>
                         <button onClick={() => { setPreview(true) }} type="button" className={`${preview && "border-b-4 "} px-4 inline-block  font-semibold py-3 border-r-1 hover:text-gray-400`}>Preview</button>

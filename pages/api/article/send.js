@@ -1,7 +1,7 @@
 import cookie from 'cookie'
 import url from '../../../backend.config'
 import axios from 'axios'
-export default async (req, res) => {
+export default async function Send(req, res) {
     if (req.method === "POST") {
         const { headline, content, Tags } = req.body;
         const cookies = cookie.parse(req.headers.cookie ?? '');

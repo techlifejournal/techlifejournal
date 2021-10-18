@@ -11,11 +11,10 @@ export default function Article({ pageContent }) {
   return (
     <div className={`flex flex-col gap-5 dark:text-white ${Style.article}`}>
       <ReactMarkdown
-        children={pageContent}
         rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm, remarkFootnotes, remarkParse]}
         components={CodeBlock}
-      />
+      >{pageContent}</ReactMarkdown>
     </div>
   );
 }

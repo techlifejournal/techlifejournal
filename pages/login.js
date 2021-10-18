@@ -69,7 +69,7 @@ function Login() {
                             disabled={Loading ? true : false}
                         >
                             {Loading ? <><AiOutlineLoading3Quarters className="animate-spin" /><span>Logging In</span></> : "Log In"}</button>
-                        <a href="/resetpassword" className="  text-blue-700" >Forgot password?</a>
+                        <Link href="/resetpassword" ><a className="  text-blue-700" >Forgot password?</a></Link>
                     </form>
                     <div className="flex w-full flex-col justify-center text-center mt-8">
                         <div className="flex flex-row text-gray-800 dark:text-gray-200 items-center">
@@ -89,7 +89,7 @@ function Login() {
                         </div>
                     </div>
                     <div className="text-grey-dark mt-6 cursor-pointer">
-                        Don't have an account?
+                        Don&apos;t have an account?
                         <Link href="/register">
                             <a className="ml-1 no-underline border-b border-blue  text-blue-700 ">
                                 SignUp

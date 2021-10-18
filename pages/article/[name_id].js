@@ -6,20 +6,17 @@ import { GoCalendar } from 'react-icons/go'
 import { RiQuillPenLine } from 'react-icons/ri'
 import Disclosure from '../../src/components/Disclosure'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-function App({ data, error }) {
+function App({ data }) {
     const [Authors, setAuthors] = useState([])
     const router = useRouter()
-
     async function fetch_author() {
         const apiRes = await fetch(`/api/authors/${data[0].authors.toString()}`)
         const res = await apiRes.json()
         setAuthors(res.data)
     }
-    useEffect(() => {
-        (error == 500 || data.length == 0) && router.push('/')
-        fetch_author()
-    }, [])
+    fetch_author()
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
@@ -43,7 +40,8 @@ export const Heading = ({ data, authors }) => {
     return <div className="flex flex-col gap-4 border-b-2 dark:border-opacity-50 mb-4">
         <h1 className="text-4xl md:text-6xl font-bold">{data.headline}</h1>
         <div className="flex justify-between text-md  mb-2">
-            <p className="flex flex-wrap items-center "><RiQuillPenLine />{authors.map((ele) => <a href={`/u/${ele.user_name} `} >{ele.full_name}</a>)}</p>
+            <p className="flex flex-wrap items-center "><RiQuillPenLine />
+                {authors.map((ele) => <Link href={`/u/${ele.user_name}`} key={ele.user_name}><a key={ele.user_name}>{ele.full_name}</a></Link>)}</p>
             <p className="flex items-center gap-1"><GoCalendar /><span>{data.pub_date}</span></p>
         </div>
     </div>

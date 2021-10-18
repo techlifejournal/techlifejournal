@@ -1,4 +1,4 @@
 const urls = {
-    base_url: "http://127.0.0.1:8000/api/"
+    base_url: "https://api-techlifejournal.herokuapp.com/api/"
 }
 export default urls

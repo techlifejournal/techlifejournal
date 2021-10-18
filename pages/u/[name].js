@@ -2,7 +2,7 @@
 import urls from '../../backend.config'
 import { GoCalendar } from 'react-icons/go'
 import Link from 'next/link';
-
+import Loader from '../../src/Utility/Loader'
 export default function User({ userData, articles, error }) {
     console.log(userData)
     console.log(articles)
@@ -18,13 +18,13 @@ export default function User({ userData, articles, error }) {
                         <a className="text-xl">0 Followers</a>
                     </div>
                 </div>
-                {articles.length != 0 ? articles.map((article) => <Link href={`/article/${article.headline.replace(/\s/g, "-")}-${article.id}`}><div className="w-full p-5 bg-gray-100 dark:bg-opacity-10 cursor-pointer break-words">
+                {articles.map((article) => <Link key={article.id} href={`/article/${article.headline.replace(/\s/g, "-")}-${article.id}`}><div key={article.id} className="w-full p-5 bg-gray-100 dark:bg-opacity-10 cursor-pointer break-words">
                     <div className="flex flex-wrap justify-between items-center">
                         <h1 className="font-semibold">{article.headline}</h1>
                         <a className="text-lg text-right nowrap inline-flex items-center gap-1"><GoCalendar /> <span>{article.pub_date}</span></a>
                     </div>
                     <p >{article.subtopics}</p>
-                </div></Link>) : <Loader />}
+                </div></Link>)}
             </div>
         </section>
     );

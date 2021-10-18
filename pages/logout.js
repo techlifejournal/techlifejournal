@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../src/context/authContext';
 import { useRouter } from 'next/router'
-function logout() {
+function Logout() {
 
     const history = useRouter()
     const { userState, setUserState } = useContext(AuthContext)
@@ -26,4 +26,4 @@ function logout() {
     )
 }
 
-export default logout
+export default Logout

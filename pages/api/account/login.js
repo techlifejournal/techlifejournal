@@ -1,7 +1,7 @@
 import cookie from 'cookie'
 import url from '../../../backend.config'
 import axios from 'axios'
-export default async (req, res) => {
+export default async function Login(req, res) {
     if (req.method === "POST") {
         console.log(req.body)
         const { email, password } = req.body;

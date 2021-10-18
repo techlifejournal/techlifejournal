@@ -31,8 +31,8 @@ function Index() {
                 <div className="grid grid-cols-1 border-r-1 border-b-1  border-gray-500  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{
                     ContentData.map((ele, index) => {
                         return <>
-                            <Link href={`/article/${ele.headline.replace(/\s/g, "-")}-${ele.id}`} >
-                                <div className={`p-2 pb-4 border-l-1 border-gray-500 cursor-pointer  ${Style.headingFillLeft}  `}>
+                            <Link key={ele.id} href={`/article/${ele.headline.replace(/\s/g, "-")}-${ele.id}`} >
+                                <div key={ele.id} className={`p-2 pb-4 border-l-1 border-gray-500 cursor-pointer  ${Style.headingFillLeft}  `}>
                                     {
                                         (index > 0) ? (ele.headline.charAt(0).toUpperCase() != ContentData[index - 1].headline.charAt(0).toUpperCase()) ? <h1 className="text-4xl uppercase text-semibold">{ele.headline.charAt(0)}
                                         </h1> : <h1 className="h-10"></h1> : <h1 className="text-4xl uppercase text-semibold">{(/[a-zA-Z]/).test(ele.headline.charAt(0)) && ele.headline.charAt(0)}</h1>}
@@ -46,8 +46,8 @@ function Index() {
                                     </a>
                                     <div className="lowercase dark:text-adark">
                                         {
-                                            ele.subtopics.map((topic) => {
-                                                return <a > {getHighlightedText(topic, search)},</a>
+                                            ele.subtopics.map((topic, key) => {
+                                                return <a key={key}> {getHighlightedText(topic, search)},</a>
                                             })
                                         }
                                     </div>
