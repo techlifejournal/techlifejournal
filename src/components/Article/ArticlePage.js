@@ -2,7 +2,7 @@
 import { Article1 as markdown } from './example'
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw'
-import CodeBlock from "./codeblock"
+import CodeBlock from "./CodeBlock"
 import remarkGfm from 'remark-gfm'
 import remarkFootnotes from 'remark-footnotes'
 import remarkParse from 'remark-parse'

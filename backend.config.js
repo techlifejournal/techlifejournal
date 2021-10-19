@@ -3,7 +3,7 @@
 
 const urls = {
     base_url: "https://api-techlifejournal.herokuapp.com/api/",
-    client_url: "https://techlifejournal.vercel.com",
+    client_url: "https://techlifejournal.netlify.app",
 }
 
 export default urls
