@@ -25,7 +25,7 @@ function Nav() {
                 <div id="center" className="hidden  md:flex font-semibold text-xs    justify-center">
                     {navs.map((ele, index) => {
 
-                        return <Link key={index} href={ele.href} ><a className={`   ${index ? "border-black dark:border-white border-l-1 border-opacity-50" : ""} px-5   hover:opacity-50  cursor-pointer `}> <span>{ele.name}</span>
+                        return <Link key={index} href={ele.href} ><a key={index} className={`   ${index ? "border-black dark:border-white border-l-1 border-opacity-50" : ""} px-5   hover:opacity-50  cursor-pointer `}> <span>{ele.name}</span>
                         </a></Link>
                     })}
                 </div>
