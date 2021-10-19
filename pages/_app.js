@@ -9,8 +9,6 @@ const TopProgressBar = dynamic(
   },
   { ssr: false },
 );
-
-
 function MyApp({ Component, pageProps }) {
   return <Contexts>
     <TopProgressBar />
