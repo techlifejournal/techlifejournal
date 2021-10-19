@@ -5,7 +5,7 @@ import React, { useState, useContext } from 'react';
 import { SidebarData } from './SidebarData';
 import MenuIcon from '@material-ui/icons/Menu';
 import DropDown from './DropDown'
-import Style from '../../../styles/home.module.css'
+import Style from '../../../styles/Home.module.css'
 import { ScrollContext } from '../../context/ScrollContext'
 import { DarkLightContext } from '../../context/darkmodeContext'
 
