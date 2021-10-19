@@ -1,4 +1,5 @@
 import react, { createContext, useState, useEffect, useContext } from 'react';
+import urls from '../../backend.config';
 export const AuthContext = createContext({
     isAuthenticated: false,
     isLoading: true,
@@ -13,7 +14,7 @@ export default function Auth(props) {
     useEffect(() => {
         const initializeAuth = async () => {
             setLoading(true);
-            const response = await fetch('/api/account/user');
+            const response = await fetch(`${urls.client_url}/api/account/user`);
             if (response.status === 200) {
                 setAuthenticated(true);
                 const { data } = await response.json()

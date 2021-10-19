@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 function App({ data, Authors }) {
-
     return (
         <section id="ArticlePage" className="flex justify-start pt-20 sm:pt-28  " style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
             <ArticleNav data={data} />
@@ -25,7 +24,6 @@ const ArticleNav = ({ data }) => {
         <Disclosure data={data} />
     </div>
 }
-
 export const Heading = ({ data, authors }) => {
     return <div className="flex flex-col gap-4 border-b-2 dark:border-opacity-50 mb-4">
         <h1 className="text-4xl md:text-6xl font-bold">{data.headline}</h1>
@@ -42,7 +40,7 @@ export const getServerSideProps = async ({ params }) => {
         const { data } = await axios.get(
             `${urls.base_url}article/?id=${params.name_id.slice(-1)}`
         );
-        const apiRes = await fetch(`${urls.client_url}api/authors/${data[0].authors.toString()}`)
+        const apiRes = await fetch(`${urls.client_url}/api/authors/${data[0].authors.toString()}`)
         const res = await apiRes.json()
         return {
             props: {
