@@ -5,7 +5,9 @@ import { Heading } from './article/[name_id]'
 import { AuthContext } from '../src/context/authContext'
 import axios from 'axios'
 import urls from '../backend.config'
+import { useRouter } from 'next/router'
 function New() {
+    const history = useRouter()
     const [content, setContent] = useState({
         headline: "",
         content: "",
@@ -22,7 +24,10 @@ function New() {
         window.alert("saved✔️")
     }
     const handelSubmit = async () => {
-        const res = await axios.post('/api/article/send', content)
+        const res = await axios.post(`${urls.client_url}/api/article/send`, content)
+        if (res.status == 200) {
+            history.push('/user')
+        }
     }
     return (
         <section>

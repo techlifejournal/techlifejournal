@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { AuthContext } from '../src/context/authContext';
 import { FaGithubSquare } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
+import urls from '../backend.config';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 function Login() {
     const history = useRouter();
@@ -28,7 +29,7 @@ function Login() {
             email: formData.email,
             password: formData.password
         }
-        const res = await axios.post('/api/account/login', body)
+        const res = await axios.post(`${urls.client_url}/api/account/login`, body)
         if (res.status == 200) {
             setUserState(!userState)
             history.push('/user')

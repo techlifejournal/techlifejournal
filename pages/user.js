@@ -5,20 +5,24 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { GoCalendar } from 'react-icons/go'
 import axios from 'axios'
+import urls from '../backend.config'
 import Loader from '../src/Utility/Loader'
 
 
 function Profile() {
     const history = useRouter()
     const [articles, setArticles] = useState([])
+    const [loading, setLoading] = useState(true)
     const { isAuthenticated, isLoading, setAuth, userData } = useContext(AuthContext)
     useEffect(() => {
         !isLoading && !isAuthenticated && history.push('/login')
         !isLoading && ArticleList(userData)
     }, [isLoading])
     async function ArticleList({ user_name }) {
-        const { data: { data } } = await axios.post('/api/article/list', { uname: user_name })
+
+        const { data: { data } } = await axios.post(`${urls.client_url}/api/article/list`, { uname: user_name })
         setArticles(data)
+        setLoading(false)
     }
     return (
 
@@ -42,13 +46,14 @@ function Profile() {
                         <a className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-blue-500 rounded">Logout</a>
                     </Link>
                 </div>
-                {articles.length != 0 ? articles.map((article) => <Link key={article.id} href={`/article/${article.headline.replace(/\s/g, "-")}-${article.id}`}><div key={article.id} className="w-full p-5 bg-gray-100 dark:bg-opacity-10 cursor-pointer break-words">
+                {!loading ? articles.map((article) => <Link key={article.id} href={`/article/${article.headline.replace(/\s/g, "-")}-${article.id}`}><div key={article.id} className="w-full p-5 bg-gray-100 dark:bg-opacity-10 cursor-pointer break-words">
                     <div className="flex flex-wrap justify-between items-center">
                         <h1 className="font-semibold">{article.headline}</h1>
                         <a className="text-lg text-right nowrap inline-flex items-center gap-1"><GoCalendar /> <span>{article.pub_date}</span></a>
                     </div>
                     <p >{article.subtopics}</p>
                 </div></Link>) : <Loader />}
+                {!loading && articles.length == 0 && <h2 className="text-center ">You dont have any article create one</h2>}
             </div>
         </section>
     )

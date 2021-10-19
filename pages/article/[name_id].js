@@ -8,18 +8,8 @@ import Disclosure from '../../src/components/Disclosure'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-function App({ data }) {
-    const [Authors, setAuthors] = useState([])
-    const router = useRouter()
-    async function fetch_author() {
-        const apiRes = await fetch(`/api/authors/${data[0].authors.toString()}`)
-        const res = await apiRes.json()
-        setAuthors(res.data)
-    }
-    fetch_author()
-    if (router.isFallback) {
-        return <div>Loading...</div>;
-    }
+function App({ data, Authors }) {
+
     return (
         <section id="ArticlePage" className="flex justify-start pt-20 sm:pt-28  " style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
             <ArticleNav data={data} />
@@ -52,11 +42,12 @@ export const getServerSideProps = async ({ params }) => {
         const { data } = await axios.get(
             `${urls.base_url}article/?id=${params.name_id.slice(-1)}`
         );
-
+        const apiRes = await fetch(`${urls.client_url}api/authors/${data[0].authors.toString()}`)
+        const res = await apiRes.json()
         return {
             props: {
                 data: data,
-
+                Authors: res.data
             },
         };
     }
