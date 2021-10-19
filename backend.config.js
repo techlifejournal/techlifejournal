@@ -1,9 +1,7 @@
-
-// const client_url = process.env.NODE_ENV === "development" ? "http://localhost:3000" : process.env.URL
-
+const url = process.env.URL
+console.log(url)
 const urls = {
     base_url: "https://api-techlifejournal.herokuapp.com/api/",
-    client_url: "https://techlifejournal.vercel.com",
+    client_url: url,
 }
-
 export default urls
