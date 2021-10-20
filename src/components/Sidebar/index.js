@@ -8,12 +8,13 @@ import DropDown from './DropDown'
 import Style from '../../../styles/Home.module.css'
 import { ScrollContext } from '../../context/ScrollContext'
 import { DarkLightContext } from '../../context/darkmodeContext'
-
+import { useRouter } from 'next/router'
 
 function Sidebar() {
     const scroll = useContext(ScrollContext);
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+    const router = useRouter()
     return (
         <SidebarWrapper>
             <>
@@ -22,7 +23,7 @@ function Sidebar() {
                         <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
                 </div>
 
-                <div className={`sidebar-menu   ${sidebar && 'active'} ${scroll < 50 ? Style.blur : 'bg-nav_lt dark:bg-dark'}`}>
+                <div className={`sidebar-menu   ${sidebar && 'active'} ${scroll < 50 && router.pathname === '/' ? Style.blur : 'bg-nav_lt dark:bg-dark'}`}>
                     <div className='flex  menu-items w-60 md:w-72 ' >
                         <div className={`flex flex-col w-full z-10 ${Style.navFont}`}>
                             {SidebarData.map((item, index) => {
