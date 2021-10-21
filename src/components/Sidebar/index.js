@@ -22,7 +22,6 @@ function Sidebar() {
                     {!sidebar ?
                         <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
                 </div>
-
                 <div className={`sidebar-menu   ${sidebar && 'active'} ${scroll < 50 && router.pathname === '/' ? Style.blur : 'bg-nav_lt dark:bg-dark'}`}>
                     <div className='flex  menu-items w-60 md:w-72 ' >
                         <div className={`flex flex-col w-full z-10 ${Style.navFont}`}>
@@ -39,9 +38,7 @@ function Sidebar() {
 
                         </div>
                     </div>
-
                 </div>
-
             </>
         </SidebarWrapper>
     );

@@ -42,3 +42,6 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(47, 47, 47);
   border-radius: 10px;
 }
+code {
+  white-space: pre-wrap !important;
+}
