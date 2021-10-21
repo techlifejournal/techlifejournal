@@ -18,7 +18,7 @@ function Nav() {
                 {/* Left part of Navbar   */}
                 <div id="left" className={`flex-1 items-center  md:ml-2 flex gap-2 cursor-pointer`}>
                     <Sidebar />
-                    <div className={` ${search ? 'hidden md:block' : 'block '} hidden x-sm:block  sm:text-xl items-center  ml-2 font-semibold`}>
+                    <div className={` ${search ? 'hidden md:block  ' : 'x-sm:block '} hidden   sm:text-xl items-center  ml-2 font-semibold`}>
                         TECHLIFEJOURNAL </div>
                 </div>
                 {/* Navigation   */}
