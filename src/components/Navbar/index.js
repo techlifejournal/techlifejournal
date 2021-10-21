@@ -18,11 +18,11 @@ function Nav() {
                 {/* Left part of Navbar   */}
                 <div id="left" className={`flex-1 items-center  md:ml-2 flex gap-2 cursor-pointer`}>
                     <Sidebar />
-                    <div className={` ${search ? 'hidden md:block' : 'block '} sm:text-xl items-center  ml-2 font-semibold`}>
+                    <div className={` ${search ? 'hidden md:block' : 'block '} hidden x-sm:block  sm:text-xl items-center  ml-2 font-semibold`}>
                         TECHLIFEJOURNAL </div>
                 </div>
                 {/* Navigation   */}
-                <div id="center" className="hidden  md:flex font-semibold text-xs    justify-center">
+                <div id="center" className="hidden  lg:flex font-semibold text-xs    justify-center">
                     {navs.map((ele, index) => {
 
                         return <Link key={index} href={ele.href} ><a key={index} className={`   ${index ? "border-black dark:border-white border-l-1 border-opacity-50" : ""} px-5   hover:opacity-50  cursor-pointer `}> <span>{ele.name}</span>
@@ -30,10 +30,10 @@ function Nav() {
                     })}
                 </div>
                 {/*  Search Icon and UserIcon */}
-                <div id="right" className="  flex-1  flex items-center gap-2 md:gap-6 justify-end">
+                <div id="right" className=" w-full lg:flex-1  flex items-center gap-1 sm:gap-3 md:gap-5 justify-end">
                     {!search ? <div className=" hover:opacity-70 cursor-pointer" onClick={() => { setSearch(true) }}> <SearchIcon /></div> :
-                        <div className="  cursor-pointer"> <div className="pl-2 rounded-md flex items-center gap-1 border-1 border-gray-300 dark:border-gray-500"> <div onClick={() => { setSearch(false) }}><SearchIcon /></div>
-                            <input className="focus:outline-none  p-1 bg-transparent w-36  sm:w-38 md:w-full" type="text" placeholder="Search.."></input>
+                        <div className="  cursor-pointer"> <div className="w-full pl-2 rounded-md flex items-center gap-1 border-1 border-gray-300 dark:border-gray-500"> <div onClick={() => { setSearch(false) }}><SearchIcon /></div>
+                            <input className="focus:outline-none  p-1 bg-transparent w-full " type="text" placeholder="Search.."></input>
                         </div></div>}
                     {isAuthenticated ?
                         <div className="hover:opacity-70 cursor-pointer  sm:block"><Link href="/user" ><PersonIcon /></Link></div> :
