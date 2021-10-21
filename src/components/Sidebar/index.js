@@ -9,7 +9,8 @@ import Style from '../../../styles/Home.module.css'
 import { ScrollContext } from '../../context/ScrollContext'
 import { DarkLightContext } from '../../context/darkmodeContext'
 import { useRouter } from 'next/router'
-
+import Link from 'next/link';
+import navigations from '../Navbar/navigations.js';
 function Sidebar() {
     const scroll = useContext(ScrollContext);
     const [sidebar, setSidebar] = useState(false);
@@ -25,11 +26,18 @@ function Sidebar() {
                 <div className={`sidebar-menu   ${sidebar && 'active'} ${scroll < 50 && router.pathname === '/' ? Style.blur : 'bg-nav_lt dark:bg-dark'}`}>
                     <div className='flex  menu-items w-60 md:w-72 ' >
                         <div className={`flex flex-col w-full z-10 ${Style.navFont}`}>
+                            {navigations.map((item, index) => {
+                                return (
+                                    <Link href={item.href} key={index} ><div key={index} className={item.name + ' block lg:hidden'}>
+                                        <SidebarRow name={item.name} icon={item.icon} />
+                                    </div></Link>
+                                );
+                            })}
                             {SidebarData.map((item, index) => {
                                 return (
-                                    <div key={index} className={item.cName}>
+                                    <Link href={item.path} key={index} ><div key={index} className={item.cName}>
                                         <SidebarRow name={item.title} icon={item.icon} />
-                                    </div>
+                                    </div></Link>
                                 );
                             })}
                             <DropDown />

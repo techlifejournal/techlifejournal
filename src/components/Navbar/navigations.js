@@ -1,22 +1,31 @@
+import { FaRegNewspaper, FaEnvelopeOpenText, FaPodcast } from 'react-icons/fa';
+import { AiFillHome, } from 'react-icons/ai';
+import { IoIosPaper, IoLogoBuffer, IoMdPeople } from 'react-icons/io';
+
 export default [
     {
-        name: "HOME",
-        href: "/"
+        name: "home",
+        href: "/",
+        icon: <AiFillHome />
     },
     {
-        name: "RESOURCES",
-        href: "/resources"
+        name: "resources",
+        href: "/resources",
+        icon: <IoLogoBuffer />
     },
     {
-        name: "PODCASTS",
-        href: "/podcasts"
+        name: "podcast",
+        href: "/podcasts",
+        icon: <FaPodcast />
     },
     {
-        name: "NEWS",
-        href: "/news"
+        name: "news",
+        href: "/news",
+        icon: <FaRegNewspaper />
     },
     {
-        name: "COMMUNITY",
-        href: "/community"
+        name: "community",
+        href: "/community",
+        icon: <IoMdPeople />
     },
 ]
