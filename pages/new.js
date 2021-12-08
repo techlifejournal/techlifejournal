@@ -11,7 +11,7 @@ function New() {
     const [content, setContent] = useState({
         headline: "",
         content: "",
-        Tags: []
+        Tags: [1]
     })
     const { userData } = useContext(AuthContext)
     const date = new Date()
