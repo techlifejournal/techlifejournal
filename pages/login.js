@@ -7,7 +7,8 @@ import { FaGithubSquare } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import urls from '../backend.config';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-function Login() {
+import { providers, signIn } from "next-auth/client";
+function SignIn({ providers }) {
     const history = useRouter();
     const errorDisplay = useRef(null)
     const [Loading, setLoading] = useState(false);
@@ -21,6 +22,7 @@ function Login() {
     };
     useEffect(() => {
         isAuthenticated && !isLoading && history.push('/user')
+        console.log(providers)
     }, [isLoading])
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -83,9 +85,9 @@ function Login() {
                             <div className=" text-4xl  rounded-md">
                                 <FaGithubSquare />
                             </div>
-                            <div className="text-4xl   rounded-md">
+                            <button className="text-4xl   rounded-md" onClick={() => signIn("google")}>
                                 <FcGoogle />
-                            </div>
+                            </button>
 
                         </div>
                     </div>
@@ -97,12 +99,13 @@ function Login() {
                             </a>
                         </Link>.
                     </div>
-
-
                 </div>
             </div>
         </div >
     )
 }
 
-export default Login
+export async function getServerSideProps(context) {
+    return { props: { providers: await providers() } };
+}
+export default SignIn

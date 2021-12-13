@@ -7,7 +7,7 @@ import { GoCalendar } from 'react-icons/go'
 import axios from 'axios'
 import urls from '../backend.config'
 import Loader from '../src/Utility/Loader'
-
+import { signOut } from "next-auth/client";
 
 function Profile() {
     const history = useRouter()
@@ -27,10 +27,10 @@ function Profile() {
     return (
 
         <section className=" flex flex-col gap-5 items-center justify-center">
-            <div className="w-full max-w-4xl  flex flex-col gap-5 items-center justify-center p-10 pt-20 md:p-20 sm:pt-28 ">
-                <div className=" bg-gray-100 dark:bg-opacity-10  w-full  flex justify-start items-center rounded-md p-10 gap-5 md:p-10 ">
+            <div className="w-full max-w-4xl  flex flex-col gap-5 items-center justify-center p-5 pt-20 md:p-20 sm:pt-28 ">
+                <div className=" bg-gray-100 dark:bg-opacity-10  w-full  flex flex-col sm:flex-row justify-start items-center rounded-md p-10 gap-5 md:p-10 ">
                     <img className="rounded-full max-h-32" src="https://avatars.githubusercontent.com/u/62538932?v=4" />
-                    <div className="font-semibold  text-3xl flex flex-col cursor-pointer">
+                    <div className="font-semibold  text-xl sm:text-2xl md:text-3xl  flex flex-col cursor-pointer">
                         <a className="hover:text-blue-500" >{userData.full_name}</a>
                         <a className="hover:text-blue-500">u/{userData.user_name}</a>
                         <Link href={`/u/${userData.user_name}`}><a className="hover:text-blue-500">{userData.about}</a></Link>
@@ -42,9 +42,15 @@ function Profile() {
                     <Link href="/new">
                         <a className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-blue-500 rounded">Create Post</a>
                     </Link>
-                    <Link href="/logout">
-                        <a className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-blue-500 rounded">Logout</a>
-                    </Link>
+
+                    <button className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-blue-500 rounded"
+                        onClick={() =>
+                            signOut({
+                                callbackUrl: `${window.location.origin}/login`
+                            })
+                        }
+                    >Logout</button>
+
                 </div>
                 {!loading ? articles.map((article) => <Link key={article.id} href={`/article/${article.headline.replace(/\s/g, "-")}-${article.id}`}><div key={article.id} className="w-full p-5 bg-gray-100 dark:bg-opacity-10 cursor-pointer break-words">
                     <div className="flex flex-wrap justify-between items-center">
