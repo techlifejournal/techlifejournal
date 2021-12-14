@@ -4,8 +4,9 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import { isJwtExpired } from "../../../constants/Utils";
 import Providers from "next-auth/providers";
-const base_url = process.env.CLIENT;
+const base_url = process.env.CLIENT
 const server = process.env.SERVER
+const URL = process.env.URL
 export const refreshToken = async function (refreshToken) {
   try {
     const response = await axios.post(
@@ -145,6 +146,6 @@ export default NextAuth({
     },
   },
   pages: {
-    signIn: '/login',
+    signIn: `${URL}/login`,
   }
 })
