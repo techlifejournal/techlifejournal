@@ -29,7 +29,7 @@ export const Heading = ({ data, authors }) => {
         <h1 className="text-4xl md:text-6xl font-bold">{data.headline}</h1>
         <div className="flex justify-between text-md  mb-2">
             <p className="flex flex-wrap items-center "><RiQuillPenLine />
-                {authors.map((ele) => <Link href={`/u/${ele.user_name}`} key={ele.user_name}><a key={ele.user_name}>{ele.full_name}</a></Link>)}</p>
+                {authors.map((ele) => <Link href={`/u/${ele.user_name}`} key={ele.user_name}><a key={ele.user_name}>{ele.full_name === "" ? ele.user_name : ele.full_name}</a></Link>)}</p>
             <p className="flex items-center gap-1"><GoCalendar /><span>{data.pub_date}</span></p>
         </div>
     </div>
@@ -38,7 +38,7 @@ export const Heading = ({ data, authors }) => {
 export const getServerSideProps = async ({ params }) => {
     try {
         const { data } = await axios.get(
-            `${urls.base_url}article/?id=${params.name_id.slice(-1)}`
+            `${urls.base_url}article/?id=${params.name_id.split('-').slice(-1)}`
         );
         const apiRes = await fetch(`${urls.client_url}/api/authors/${data[0].authors.toString()}`)
         const res = await apiRes.json()

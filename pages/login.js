@@ -7,7 +7,7 @@ import { FaGithubSquare } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import urls from '../backend.config';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { providers, signIn } from "next-auth/client";
+import { providers, signIn, signOut } from "next-auth/client";
 function SignIn({ providers }) {
     const history = useRouter();
     const errorDisplay = useRef(null)
@@ -33,7 +33,7 @@ function SignIn({ providers }) {
         }
         const res = await axios.post(`${urls.client_url}/api/account/login`, body)
         if (res.status == 200) {
-            setUserState(!userState)
+            signIn("credentials", body)
             history.push('/user')
         }
         else if (res.status == 202) {
