@@ -8,10 +8,10 @@ export default function User({ userData, articles, error }) {
     console.log(articles)
     return (
         <section className=" flex flex-col gap-5 items-center justify-center">
-            <div className="w-full max-w-4xl  flex flex-col gap-5 items-center justify-center p-10 pt-20 md:p-20 sm:pt-28 ">
-                <div className=" bg-gray-100 dark:bg-opacity-10  w-full  flex justify-start items-center rounded-md p-10 gap-5 md:p-10 ">
+            <div className="w-full max-w-4xl  flex flex-col gap-5 items-center justify-center p-5 pt-20 md:p-20 sm:pt-28 ">
+                <div className=" bg-gray-100 dark:bg-opacity-10  w-full  flex flex-col sm:flex-row justify-start items-center rounded-md p-10 gap-5 md:p-10 ">
                     <img className="rounded-full max-h-32" src="https://avatars.githubusercontent.com/u/62538932?v=4" />
-                    <div className="font-semibold  text-3xl flex flex-col cursor-pointer">
+                    <div className="font-semibold  text-xl sm:text-2xl md:text-3xl  flex flex-col cursor-pointer">
                         <a className="hover:text-blue-500" >{userData[0].full_name}</a>
                         <Link href={`/u/${userData[0].user_name}`}><a className="hover:text-blue-500">u/{userData[0].user_name}</a></Link>
                         <a className="hover:text-blue-500" >{userData[0].about}</a>

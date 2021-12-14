@@ -1,11 +1,12 @@
-import cookie from 'cookie';
+
 import urls from '../../../backend.config';
+import { getSession } from "next-auth/client"
 export default async (req, res) => {
     if (req.method === 'GET') {
-        const cookies = cookie.parse(req.headers.cookie ?? '');
-        const access = cookies.access ?? false;
 
-        if (access === false) {
+        const session = await getSession({ req });
+
+        if (!session.accessToken) {
             return res.status(401).json({
                 error: 'User unauthorized to make this request'
             });
@@ -16,7 +17,7 @@ export default async (req, res) => {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
-                    'Authorization': `Bearer ${access}`
+                    'Authorization': `Bearer ${session.accessToken}`
                 }
             });
             const data = await apiRes.json();
