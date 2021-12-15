@@ -6,7 +6,7 @@ export default async (req, res) => {
 
         const session = await getSession({ req });
 
-        if (!session.accessToken) {
+        if (!session) {
             return res.status(401).json({
                 error: 'User unauthorized to make this request'
             });
