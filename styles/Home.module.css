@@ -45,7 +45,7 @@
   background-size: 100vw;
 }
 .blur {
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
   backface-visibility: visible;
 }
 
