@@ -47,7 +47,7 @@ function SignIn({ providers }) {
         <div>
             <div className="bg-grey-lighter min-h-screen flex flex-col">
                 <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                    <form onSubmit={handleSubmit} className=" px-6 py-8 rounded shadow-md w-full">
+                    <form onSubmit={handleSubmit} className=" px-6 py-8 rounded shadow-lg w-full">
                         <h1 className="mb-8 text-3xl font-semibold text-center">Log In</h1>
 
 
@@ -95,7 +95,7 @@ function SignIn({ providers }) {
                         Don&apos;t have an account?
                         <Link href="/register">
                             <a className="ml-1 no-underline border-b border-blue  text-blue-700 ">
-                                SignUp
+                                Sign Up
                             </a>
                         </Link>.
                     </div>
