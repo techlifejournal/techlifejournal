@@ -1,19 +1,16 @@
-import { Category } from '@material-ui/icons';
 import React, { useState } from 'react'
-import { FiArrowUpRight, FiMinus, FiPlus } from 'react-icons/fi';
-import { BsFillCaretDownFill, BsFillCaretRightFill } from 'react-icons/bs';
+import { BsFillCaretDownFill } from 'react-icons/bs';
 import styled from 'styled-components'
 function SideMenu() {
-    const [Category, setCategoty] = useState(true);
+    const [category, setCategory] = useState(true);
     return (
-
         <>
-            <button onClick={() => { setCategoty(!Category) }}
+            <button onClick={() => setCategory(p => !p)}
                 className="flex items-center hover:bg-gray-500 hover:bg-opacity-20 dark:hover:bg-opacity-20 dark:hover:bg-white px-2 py-3 md:p-4 gap-2">
-                {Category ? <><BsFillCaretDownFill />  </> : <><BsFillCaretRightFill /> </>}
+                <BsFillCaretDownFill className={`transition-transform transform ${category ? '' : '-rotate-90'}`} />
                 <span>Category</span>
             </button>
-            {Category && <DropDown className=" text-sm font-b px-2 py-3 md:p-4    grid grid-cols-2">
+            {category && <DropDown className=" text-sm font-b px-2 py-3 md:p-4    grid grid-cols-2">
                 <a>Python</a>
                 <a>JavaScript</a>
                 <a>C++</a>

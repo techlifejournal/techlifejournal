@@ -14,14 +14,14 @@ import navigations from '../Navbar/navigations.js';
 function Sidebar() {
     const scroll = useContext(ScrollContext);
     const [sidebar, setSidebar] = useState(false);
-    const showSidebar = () => setSidebar(!sidebar);
+    const toggleSidebar = () => setSidebar(prev => !prev);
     const router = useRouter()
     return (
         <SidebarWrapper>
             <>
-                <div className="items-center cursor-pointer hover:opacity-70" >
+                <div className="items-center transition-opacity duration-100 cursor-pointer hover:opacity-70" >
                     {!sidebar ?
-                        <MenuIcon onClick={showSidebar} /> : <CloseIcon onClick={showSidebar} />}
+                        <MenuIcon onClick={toggleSidebar} /> : <CloseIcon onClick={toggleSidebar} />}
                 </div>
                 <div className={`sidebar-menu   ${sidebar && 'active'} ${scroll < 50 && router.pathname === '/' ? Style.blur : 'bg-nav_lt dark:bg-dark'}`}>
                     <div className='flex  menu-items w-60 md:w-72 ' >
@@ -42,7 +42,7 @@ function Sidebar() {
                             })}
                             <DropDown />
                         </div>
-                        <div className="absolute h-full z-0 w-screen" onClick={showSidebar} >
+                        <div className="absolute h-full z-0 w-screen" onClick={toggleSidebar} >
 
                         </div>
                     </div>
