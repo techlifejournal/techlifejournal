@@ -22,7 +22,6 @@ function SignIn({ providers }) {
     };
     useEffect(() => {
         isAuthenticated && !isLoading && history.push('/user')
-        console.log(providers)
     }, [isLoading])
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,8 +36,6 @@ function SignIn({ providers }) {
             history.push('/user')
         }
         else if (res.status == 202) {
-            console.log(res)
-            console.log(errorDisplay.current)
             errorDisplay.current.text = "Invalid Email or Password"
         }
         setLoading(false)
