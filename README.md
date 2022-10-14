@@ -2,7 +2,7 @@
 # [TechLifeJournal](https://techlifejournal.com)
 
 #### Description
-platform to read articles, news and updates all over the tech community and place to share knowledge and bring value to the community
+A platform to read articles, news and updates from all over the tech community, and a place to share knowledge and bring value to the community
 
 ####
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ds97LCK---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ymlmr15l83rrjq8natft.jpg" alt="Hacktobar" />
@@ -13,37 +13,37 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-* `Node JS` 
+* `Node.js` 
 * `npm` or `yarn`
 
 ## Built With
 
-* [Next Js](https://nextjs.org/) - framework built on top of Node.js enabling React based web applications functionalities such as server-side rendering and generating static websites.
+* [Next JS](https://nextjs.org/) - framework built on top of Node.js enabling React based web applications functionalities such as server-side rendering and generating static websites.
 * [Tailwind CSS](https://tailwindcss.com/) - a utility-first CSS framework for rapidly building custom user interfaces
 ### Running the site
-* Fork  and Clone the repository
+* Fork and Clone the repository
 
 ```shell script
 $ git clone https://github.com/<your_github_username>/techlifejournal.git
 $ cd techlifejournal
 ```
-* installing the packages
+* Install necessary packages
 ```shell script
 $ npm install
 ```
-* setup .env file 
+* Setup .env file 
 ```env 
 URL=http://localhost:3000
 BACKEND_URL = https://api-techlifejournal.herokuapp.com/api/
 ```
-* start the webserver
+* Start the webserver
 ```shell script 
 $ npm run dev
 # or
 $ yarn dev
 ```
 
-* output
+* Output
 ```
 You can now view the site in the browser.
 
@@ -54,7 +54,7 @@ You can now view the site in the browser.
 Note that the development build is not optimized.
 To create a production build, use npm run build.
 ```
-* open the website in your browser
+* Open the website in your browser
 
 
 
