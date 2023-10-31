@@ -60,7 +60,7 @@ To create a production build, use npm run build.
 
 ## Contributing
 
-If you want to contribute to the project and help improve it, your service is very much appreciated! Contributing is also a great way to learn more about social coding on GitHub, get introduced to new technologies and their ecosystems and also to learn to make constructive, helpful bug reports, feature requests and the noblest of all contributions: a good, clean pull request.
+If you have the passion and the skills to contribute to this project, we would be grateful for your service. Contributing to open source projects is a great way to learn more about social coding on GitHub, get introduced to new technologies and their ecosystems, and develop the skills to make constructive, helpful bug reports, feature requests, and pull requests.
 
 
 ### How to make a clean pull request
